@@ -1,0 +1,374 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Projects | TeamSync</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#5a00c6",
+              "inverse-surface": "#dfe2ef",
+              "on-secondary": "#3f008e",
+              "surface-container-low": "#181b25",
+              "surface-container-high": "#262a34",
+              "on-primary-container": "#ebe1ff",
+              tertiary: "#c0c6da",
+              "on-primary": "#381385",
+              "inverse-on-surface": "#2c303a",
+              "secondary-fixed-dim": "#d2bbff",
+              "surface-container": "#1c1f29",
+              error: "#ffb4ab",
+              "inverse-primary": "#674bb5",
+              "primary-fixed-dim": "#cebdff",
+              "tertiary-container": "#606778",
+              surface: "#0f131c",
+              primary: "#cebdff",
+              "on-surface": "#dfe2ef",
+              "primary-fixed": "#e8ddff",
+              "surface-bright": "#353943",
+              "on-tertiary": "#2a303f",
+              "on-tertiary-container": "#e0e6fa",
+              "surface-container-lowest": "#0a0e17",
+              outline: "#958da1",
+              "on-secondary-container": "#c9aeff",
+              "surface-dim": "#0f131c",
+              "secondary-container": "#6001d1",
+              secondary: "#d2bbff",
+              "on-surface-variant": "#ccc3d8",
+              "on-primary-fixed": "#21005e",
+              "on-primary-fixed-variant": "#4f319c",
+              "primary-container": "#6f54be",
+              "tertiary-fixed": "#dce2f6",
+              "on-error": "#690005",
+              "on-background": "#dfe2ef",
+              "secondary-fixed": "#eaddff",
+              background: "#0f131c",
+              "on-tertiary-fixed": "#151c2a",
+              "surface-container-highest": "#31353f",
+              "outline-variant": "#4a4455",
+              "on-error-container": "#ffdad6",
+              "surface-variant": "#31353f",
+              "surface-tint": "#cebdff",
+              "error-container": "#93000a",
+              "on-secondary-fixed": "#25005a",
+              "tertiary-fixed-dim": "#c0c6da",
+              "on-tertiary-fixed-variant": "#404757",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Space Grotesk"],
+              display: ["Space Grotesk"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0a0e17;
+        color: #dfe2ef;
+        overflow-x: hidden;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .glass-panel {
+        background: rgba(49, 53, 63, 0.4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .nebula-glow {
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.4),
+          0 0 15px rgba(124, 58, 237, 0.05);
+      }
+      .card-hover:hover {
+        background-color: #262a34;
+        box-shadow: 0 0 20px rgba(124, 58, 237, 0.1);
+        transform: translateY(-2px);
+      }
+      .focus-pulse {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #cebdff 0%, transparent 70%);
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.5);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-body selection:bg-primary/30">
+    <!-- Sidebar Navigation Shell -->
+    <aside
+      class="fixed left-0 top-0 h-full z-40 flex flex-col p-6 bg-[#181b25]/60 backdrop-blur-xl h-screen w-64 border-r border-[#4a4455]/15 shadow-[0_20px_40px_rgba(0,0,0,0.4)] font-['Space_Grotesk'] text-sm tracking-wide"
+    >
+      <div class="mb-10 flex flex-col gap-1">
+        <span
+          class="text-2xl font-bold bg-gradient-to-br from-[#cebdff] to-[#6f54be] bg-clip-text text-transparent"
+          >TeamSync</span
+        >
+        <span
+          class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60"
+          >The Celestial Workspace</span
+        >
+      </div>
+      <nav class="flex flex-col gap-2 flex-grow">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300 font-headline text-sm tracking-wide rounded-lg"
+          href="dashboard.html"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#cebdff] bg-[#31353f]/40 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.1)] font-headline text-sm tracking-wide"
+          href="projects.html"
+        >
+          <span class="material-symbols-outlined">folder_shared</span>
+          <span>Projects</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300 font-headline text-sm tracking-wide rounded-lg"
+          href="tasks.html"
+        >
+          <span class="material-symbols-outlined">assignment</span>
+          <span>Tasks</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300 font-headline text-sm tracking-wide rounded-lg"
+          href="logs.html"
+        >
+          <span class="material-symbols-outlined">history</span>
+          <span>Activity Log</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300 font-headline text-sm tracking-wide rounded-lg"
+          href="contribution.html"
+        >
+          <span class="material-symbols-outlined">stars</span>
+          <span>Contribution</span>
+        </a>
+      </nav>
+      <div class="mt-auto">
+        <button
+          id="newProjectBtn"
+          class="w-full py-3 px-4 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-primary/20"
+        >
+          <span class="material-symbols-outlined text-sm">add_circle</span>
+          New Project
+        </button>
+      </div>
+    </aside>
+    <!-- Top App Bar -->
+    <header
+      class="fixed top-0 right-0 left-64 h-20 flex justify-between items-center px-8 z-30 bg-[#0a0e17]/40 backdrop-blur-md font-['Space_Grotesk'] font-medium"
+    >
+      <div class="flex items-center gap-6 flex-1">
+        <div class="relative w-full max-w-md">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl"
+            >search</span
+          >
+          <input
+            class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary/30 rounded-full py-2 pl-11 pr-4 text-sm text-on-surface placeholder:text-on-surface-variant/40"
+            placeholder="Search constellations..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+        <button
+          class="relative text-on-surface-variant hover:text-white transition-colors"
+        >
+          <span class="material-symbols-outlined">notifications</span>
+          <span
+            class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"
+          ></span>
+        </button>
+        <button
+          class="text-on-surface-variant hover:text-white transition-colors"
+        >
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div
+          class="h-10 w-10 rounded-full overflow-hidden border border-outline-variant/30"
+        >
+          <img
+            alt="User Profile"
+            class="w-full h-full object-cover"
+            data-alt="A professional portrait of a tech-savvy individual with short dark hair and a modern aesthetic, looking confidently at the camera. The background is a soft-focus office environment with ambient blue and purple lighting, reflecting a high-end digital agency atmosphere. The lighting is crisp and cinematic, emphasizing clean skin and sharp features."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2u_FoQ1IGH3mgyEEYUa9xg8T75TpEhwZJY1iVmvcG3BNUK1vDrcr0oFiL7QXTKN0J9e8AMRiDFlahH0HNEfC9e9bqxqdl-RdnaeJvoEVGg_vqPvkw67rLTBTTVJJvpKZQuR3eOSeDqhKB3m_Vjn1xqueCogO-XIeJuFy1XDPCrCad6vFEjjDuZ6SsYd5XhpLNhBQbNuSRpIoai1swaJbuRFplPS_2UV7KVU2jS6io_tfk8KS8ZNKAAuAHvUtA-ZzZHSsQhZeXedY"
+          />
+        </div>
+      </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 pt-28 px-12 pb-12 min-h-screen">
+      <!-- Background Ambient Effect -->
+      <div
+        class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden"
+      ></div>
+      <!-- Header Section -->
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <h1
+            class="text-4xl font-headline font-bold text-on-surface tracking-tight mb-2"
+          >
+            Projects
+          </h1>
+          <p
+            class="text-on-surface-variant max-w-lg font-light leading-relaxed"
+          >
+            Navigate your fleet of active initiatives. Track progress across the
+            digital nebula and synchronize your team's orbit.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex -space-x-3">
+            <img
+              alt="Team member"
+              class="w-10 h-10 rounded-full border-2 border-background object-cover"
+              data-alt="Close-up portrait of a woman with vibrant, creative energy and a slight smile, illuminated by neon purple studio lighting. The style is sleek and futuristic, matching a digital workspace theme. High resolution photography with shallow depth of field."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtIeshsfs1P4VkNg5uhWvDS-TfhUjwhdP-FGZ9Zc8t1feDwgFhYI1uuW_ZSyKvFmb2YWa4ktILLDpsThgUkN4Zy-9Uq3EsdVCImS1VrhwJHawNM7KlBROATscKv3RMUVjVrBdGduwVZYofoyhHyV78nPr3On7o6JZRI34-Ayzv8cQWVfIGsvUQeqwUEDbL5jkBw75GKWC76L-1dVL8QKE8PQMKQPOdZ5L5YScrYlp8oB7Jht4cJNVPyX08SK3g5qq1Xpy52FyABig"
+            />
+            <img
+              alt="Team member"
+              class="w-10 h-10 rounded-full border-2 border-background object-cover"
+              data-alt="Portrait of a young male professional in a modern studio setting with blue atmospheric light casting subtle shadows. He has a clean, minimalist aesthetic. The overall mood is intelligent and focused, consistent with a high-tech project management platform."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEvKqFhTyijtCEiohkunHBxWP_VChTxBK-GXUbw9HaFwnLgz8iMGfEOfC_QMWScKUqCDl6pAplFXH3bId8VIIvPZ8HvaBDxOLNV2mN5Fjqa7M9ZfuU7X1jTz8_MNlWy2ARvV72_il9Mu4vFly11Zcy0oiokmy5Kk0dKoDa41FDp2_Lc2AGKSmkgVg8ui4cXnoepTS7vGDfTpMCiQJ1FTWTygyt1Nz6U7e2JcJmsPLpq-24KQRgGpyk6ss-1B6jVGApt1ubGDFzOT0"
+            />
+            <div
+              class="w-10 h-10 rounded-full border-2 border-background bg-surface-container-high flex items-center justify-center text-[10px] font-bold text-primary"
+            >
+              +12
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="projectList"></div>
+        <!-- Project Card 1 -->
+        
+        <!-- New Project Empty State / Card -->
+        <button
+          id="newProjectBtns"
+          class="group border-2 border-dashed border-outline-variant/30 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 h-[340px]"
+        >
+          <div
+            class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center group-hover:scale-110 transition-transform duration-500"
+          >
+            <span class="material-symbols-outlined text-3xl text-primary"
+              >add_circle</span
+            >
+          </div>
+          <div class="text-center">
+            <h4
+              class="text-lg font-headline font-semibold text-on-surface mb-1"
+            >
+              Create New Project
+            </h4>
+            <p class="text-sm text-on-surface-variant">
+              Expand the TeamSync universe with a new project
+            </p>
+          </div>
+        </button>
+      </div>
+      <!-- Secondary Content: Global Timeline / Stats -->
+    </main>
+    <script type="module">
+      import { listenAuth } from "../js/auth.js";
+      import { getUserData } from "../js/userService.js";
+      import { getProjects } from "../js/projectService.js";
+
+
+      // listenAuth(async (user) => {
+      //   if (!user) {
+      //     window.location.href = "/pages/auth/login.html";
+      //     return;
+      //   }
+
+      //   try {
+      //     // ambil user
+      //     const userData = await getUserData(user.uid);
+
+      //     document.getElementById("userName").textContent = userData.nama;
+      //     document.getElementById("userRole").textContent = userData.role;
+
+      //     // role check
+      //     if (userData.role !== "Leader") {
+      //       document.getElementById("newProjectBtn").style.display = "none";
+      //       document.getElementById("newProjectBtns").style.display = "none";
+      //     }
+
+      //     // ambil project
+      //     const projects = await getProjects();
+
+      //     renderProjects(projects);
+      //   } catch (err) {
+      //     console.error(err);
+      //   }
+      // });
+    </script>
+    <script type="module" src="../pages/project.js"></script>
+    <script>
+      // Micro-interactions for the cards
+      document.querySelectorAll(".card-hover").forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+          const progress = card.querySelector(".bg-gradient-to-r");
+          if (progress) {
+            progress.style.filter = "brightness(1.2)";
+          }
+        });
+        card.addEventListener("mouseleave", () => {
+          const progress = card.querySelector(".bg-gradient-to-r");
+          if (progress) {
+            progress.style.filter = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

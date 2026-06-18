@@ -1,0 +1,631 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#25005a",
+              "on-surface-variant": "#ccc3d8",
+              "secondary-fixed": "#eaddff",
+              "tertiary-fixed-dim": "#c0c6da",
+              background: "#0f131c",
+              "primary-fixed-dim": "#cebdff",
+              "surface-container-lowest": "#0a0e17",
+              secondary: "#d2bbff",
+              tertiary: "#c0c6da",
+              "surface-variant": "#31353f",
+              "inverse-primary": "#674bb5",
+              primary: "#cebdff",
+              "surface-container-low": "#181b25",
+              error: "#ffb4ab",
+              "error-container": "#93000a",
+              "surface-bright": "#353943",
+              "on-error-container": "#ffdad6",
+              "inverse-on-surface": "#2c303a",
+              "primary-fixed": "#e8ddff",
+              "inverse-surface": "#dfe2ef",
+              "secondary-fixed-dim": "#d2bbff",
+              surface: "#0f131c",
+              "outline-variant": "#4a4455",
+              "on-tertiary-fixed-variant": "#404757",
+              "on-secondary-container": "#c9aeff",
+              "surface-tint": "#cebdff",
+              "on-primary": "#381385",
+              "surface-container-high": "#262a34",
+              "on-tertiary-container": "#e0e6fa",
+              "on-primary-fixed": "#21005e",
+              "surface-dim": "#0f131c",
+              "on-primary-fixed-variant": "#4f319c",
+              "surface-container": "#1c1f29",
+              "tertiary-fixed": "#dce2f6",
+              "on-background": "#dfe2ef",
+              "on-secondary": "#3f008e",
+              "on-tertiary": "#2a303f",
+              "on-secondary-fixed-variant": "#5a00c6",
+              "surface-container-highest": "#31353f",
+              "on-error": "#690005",
+              "on-tertiary-fixed": "#151c2a",
+              "primary-container": "#6f54be",
+              "secondary-container": "#6001d1",
+              outline: "#958da1",
+              "on-surface": "#dfe2ef",
+              "on-primary-container": "#ebe1ff",
+              "tertiary-container": "#606778",
+            },
+            fontFamily: {
+              headline: ["Space Grotesk"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .nebula-shadow {
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.4),
+          0 0 15px rgba(124, 58, 237, 0.05);
+      }
+      .active-glow {
+        box-shadow: 0 0 20px rgba(206, 189, 255, 0.15);
+      }
+      body {
+        background-color: #0a0e17;
+        color: #dfe2ef;
+      }
+    </style>
+  </head>
+  <body class="font-body selection:bg-primary/30 selection:text-primary">
+    <!-- SideNavBar Integration -->
+    <aside
+      class="fixed left-0 top-0 h-full z-40 flex flex-col p-6 h-screen w-64 border-r border-[#4a4455]/15 bg-[#181b25]/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+    >
+      <div class="mb-10">
+        <h1
+          class="text-2xl font-bold bg-gradient-to-br from-[#cebdff] to-[#6f54be] bg-clip-text text-transparent font-headline"
+        >
+          TeamSync
+        </h1>
+        <p
+          class="text-[0.6875rem] text-on-surface-variant font-label tracking-widest mt-1"
+        >
+          The Celestial Workspace
+        </p>
+      </div>
+      <nav class="flex-1 space-y-2">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300 font-headline text-sm tracking-wide rounded-lg"
+          href="dashboard.html"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300 font-headline text-sm tracking-wide rounded-lg"
+          href="projects.html"
+        >
+          <span class="material-symbols-outlined">folder_shared</span>
+          <span>Projects</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#cebdff] bg-[#31353f]/40 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.1)] font-headline text-sm tracking-wide"
+          href="tasks.html"
+        >
+          <span class="material-symbols-outlined">assignment</span>
+          <span>Tasks</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300 font-headline text-sm tracking-wide rounded-lg"
+          href="logs.html"
+        >
+          <span class="material-symbols-outlined">history</span>
+          <span>Activity Log</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300 font-headline text-sm tracking-wide rounded-lg"
+          href="contribution.html"
+        >
+          <span class="material-symbols-outlined">stars</span>
+          <span>Contribution</span>
+        </a>
+      </nav>
+      <div class="mt-auto pt-6 border-t border-outline-variant/10">
+        <button
+          id="newProjectBtn"
+          class="w-full py-3 px-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold rounded-xl transition-transform active:scale-95 duration-150 flex items-center justify-center gap-2"
+        >
+          <span class="material-symbols-outlined text-[20px]">add_circle</span>
+          <span>New Project</span>
+        </button>
+      </div>
+    </aside>
+    <!-- TopAppBar Integration -->
+    <header
+      class="fixed top-0 right-0 left-64 h-20 flex justify-between items-center px-8 z-30 bg-[#0a0e17]/40 backdrop-blur-md font-headline font-medium"
+    >
+      <div class="flex items-center gap-6 flex-1">
+        <div class="relative w-full max-w-md group">
+          <span
+            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors"
+            >search</span
+          >
+          <input
+            class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant/30 focus:border-secondary focus:ring-0 rounded-xl pl-12 pr-4 py-2 text-sm transition-all"
+            placeholder="Search signals..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+        <button
+          class="text-[#ccc3d8] hover:text-white transition-colors relative"
+        >
+          <span class="material-symbols-outlined">notifications</span>
+          <span
+            class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full border-2 border-background"
+          ></span>
+        </button>
+        <button class="text-[#ccc3d8] hover:text-white transition-colors">
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div
+          class="h-10 w-10 rounded-full overflow-hidden border border-primary/20 hover:border-primary/50 transition-colors cursor-pointer"
+        >
+          <img
+            alt="User Profile"
+            class="w-full h-full object-cover"
+            data-alt="Close-up portrait of a young man with a focused expression, soft cinematic lighting, dark background"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTMC3IT7mMIkvXWHwqgBLbuP4DAJ6v11EMsy7Y3mi6PEtAYth6DV1vxUl3_TgV9sduFE4WofL729TvjQMg1Ygcqy4mSFyHnE0O45Urr4RprKsmylmP_cQOrHsUHuBk2NB_xi4FJF8mIHPT-jSEgIN7fDeeIWaXIF17asheC-SqSTklQfEttd60P_qKIGY7Lxi2mQJ__OLEmnfAFpiKTfsU6fG0bhD8JbICUrYA11db2TG7nSe3MgSbGTaLdtCIZodB93_p-_VAf6I"
+          />
+        </div>
+      </div>
+    </header>
+    <!-- Main Canvas -->
+    <main class="ml-64 pt-28 pb-12 px-12 min-h-screen">
+      <!-- Project Header -->
+      <section class="mb-12 flex justify-between items-end">
+        <div>
+          <div class="flex items-center gap-3 mb-2">
+            <span
+              class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] uppercase tracking-widest font-bold rounded"
+              >Active Mission</span
+            >
+            <span class="text-on-surface-variant font-label text-xs"
+              >Project ID: TS-204</span
+            >
+          </div>
+          <h2
+            class="text-4xl font-bold font-headline text-on-surface tracking-tight"
+          >
+            Quantum Research Lab
+          </h2>
+          <p
+            class="text-on-surface-variant mt-2 max-w-2xl font-light leading-relaxed"
+          >
+            Designing the interface for a collaborative physics simulation
+            engine. High focus on data visualization and real-time state
+            management.
+          </p>
+        </div>
+        <div class="flex flex-col items-end gap-4">
+          <div class="flex -space-x-3">
+            <img
+              alt="Team member"
+              class="w-10 h-10 rounded-full border-2 border-surface-container-lowest"
+              data-alt="Portrait of a woman smiling, bright outdoor lighting, blurred greenery in background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNVYdmVFKVNEwyprGys_Xg1otHCikjlfRw-W4MRdyyDTlbz7UtlgF3nA-YV4XdNcGgpKm8ioe4X3jime3VVbvfXnUXH6zGWgYvFG1DVKnK9DXLIAlj_A4J-5l8MSKkMdKCD0hEPgFcHCJrr5tZUBB3daFPd18de-LmtHhpjzZtp-OZemAZCiZy7ePD9D1Yn1K1EKdeAK-INNYAIgiJ7xq9UXub2V8jDBACYTg-UgOAG_QqSC-cVmuPnlhZzGuLL3qa3KnRZqbjSXM"
+            />
+            <img
+              alt="Team member"
+              class="w-10 h-10 rounded-full border-2 border-surface-container-lowest"
+              data-alt="Professional portrait of a man, studio lighting, solid grey background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuADEFhxcPZjxlouB0upc0f_gwVPPjDiRmOG4PNTECZ6loX_kl_eJlzGYKMAA4AvW5owTqusgLd07B3glNjzjovvPPzEqYvJ2uSUYEBNGk6HxOImobAa8Dk9eDNnCj4vOITHfQBbaM2x0htkaA9EARtArDwsXBlfKTKzXfEGM_PP0V7rYNplGk-jdDAjH603_LF4vY6ojFNDhbR9BorrxbKkr_mR_D4hZ58pxH10496M6ELDlGham5mNZuxKgN43zTuVIWcDW_gvJPc"
+            />
+            <img
+              alt="Team member"
+              class="w-10 h-10 rounded-full border-2 border-surface-container-lowest"
+              data-alt="Young woman with thoughtful expression, natural afternoon sunlight, city background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSIGLaMvg_PC93_WK5T_aMLhhkESyZFz6Ej1ry3XOmiEGmVtKop2ONLT8tKZyQK7Nw8NaW_Icj8bdx1HrUr7fLOVlUWSwzgerBTIqIAFtO6EIexV83d9vALo1KPrZJBS6NYIXIWX6FghyX7JStVRTlkZKnQZnrceSUsIURlVI78k_izv_yhkWJc7b2JNUlggjj43imXwhymcwbZjUlHluxDrc5mnlyRbFI7Z-YLBc4p90BYhw4xh1jW1nEwF7evnvoAQ-CNb9Nv0Y"
+            />
+            <div
+              class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-surface-container-lowest flex items-center justify-center text-xs font-bold text-primary"
+            >
+              +5
+            </div>
+          </div>
+          <button
+            id="createTaskBtn"
+            class="bg-primary/5 hover:bg-primary/10 text-primary border border-primary/20 px-6 py-2.5 rounded-xl font-headline text-sm font-medium transition-all flex items-center gap-2 group"
+          >
+            <span
+              class="material-symbols-outlined text-[18px] transition-transform group-hover:rotate-90"
+              >add</span
+            >
+            Assign New Task
+          </button>
+        </div>
+      </section>
+      <!-- Task Board Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Column: To Do -->
+        <div class="space-y-6" id="todoContainer">
+          <div class="flex items-center justify-between px-2 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-outline rounded-full"></span>
+              <h3 class="font-headline font-bold text-on-surface tracking-wide">
+                To Do
+              </h3>
+            </div>
+            <span
+              class="text-xs font-label text-on-surface-variant bg-surface-container-high px-2 py-1 rounded"
+              >3</span
+            >
+          </div>
+          <!-- Task Card 1 -->
+          <article class="space-y-6" id="todoList"></article>
+        </div>
+        <!-- Column: In Progress -->
+        <div class="space-y-6" id="progressContainer">
+          <div class="flex items-center justify-between px-2 mb-4">
+            <div class="flex items-center gap-2">
+              <span
+                class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_8px_#cebdff]"
+              ></span>
+              <h3 class="font-headline font-bold text-on-surface tracking-wide">
+                In Progress
+              </h3>
+            </div>
+            <span
+              class="text-xs font-label text-on-surface-variant bg-surface-container-high px-2 py-1 rounded"
+              >2</span
+            >
+          </div>
+          <article class="space-y-6" id="progressList"></article>
+          <!-- Task Card: Active/Featured -->
+          <article
+            class="bg-surface-container-low p-6 rounded-xl active-glow nebula-shadow border border-primary/20 group transition-all duration-300 relative overflow-hidden"
+          >
+            <div class="absolute top-0 right-0 p-4">
+              <span
+                class="flex h-2 w-2 rounded-full bg-primary animate-ping opacity-75"
+              ></span>
+            </div>
+            <div class="flex justify-between items-start mb-4">
+              <span
+                class="px-2 py-0.5 bg-primary/20 text-[10px] text-primary font-bold rounded uppercase tracking-tighter"
+                >Critical</span
+              >
+              <span
+                class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors cursor-pointer"
+                >more_horiz</span
+              >
+            </div>
+            <h4 class="text-on-surface font-headline font-semibold mb-2">
+              Nebula Shader Implementation
+            </h4>
+            <p class="text-on-surface-variant text-sm font-light mb-6">
+              Developing the GLSL shaders for the background celestial effects.
+              Optimizing for high frame rates.
+            </p>
+            <div class="flex justify-between items-center">
+              <div class="flex -space-x-2">
+                <img
+                  alt="User"
+                  class="w-7 h-7 rounded-full border border-surface-container-low"
+                  data-alt="Close-up of a young man's face, atmospheric lighting, moody vibe"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeDoAAcxqN6EBtKf24UVJgj9EBdq0llQNRTjHJCaL9ENgO-2O16TebE3kYBDmMzdZmlDTobgeiSWc2BU0Ar1-EchLhiT2sODHz32EKG8p3URokksfrrGowSRTPsex4lDAb8iTVH2VlcltI8QsIegz1QWHIXTPiZYZAdIMec4TQsaaczQZNa-5i4rTU_xfw26O4-2tJdtAecCMoxnHEU7i3TsgeyR5lr6FD3Oa6GGvakzMjuVXwgOCfhw73qHEpfaAqfae8lMsbCJM"
+                />
+                <img
+                  alt="User"
+                  class="w-7 h-7 rounded-full border border-surface-container-low"
+                  data-alt="Portrait of a young woman smiling brightly, blurred sunset background"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAMaxx_XU8YhdzvzPm4vR3vnTPPHQg7z_EEsnG7P2TScp3YRJbvROMu7O6zktb8k_pPbUFpG5HCeqGWx6S_8dujaVJXhZd3rKyU392XnrQAGHx3gKAIqGiuqZCIKZCwLpEkvFKEgcjThZgKkDKqDXKZdglM80D9mvM3AWJv5rUKIVEIN14wLhREUGwcPg8SbTzfvNMU63eHhUlGELh-_9ueokilQsu-3rvljCJKhhcKpuII_Yq3t446YUXc5GXXhgxniGa0VIa6R4"
+                />
+                <img
+                  alt="User"
+                  class="w-7 h-7 rounded-full border border-surface-container-low"
+                  data-alt="Professional man with short hair, neutral background, sharp lighting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvCfuChKI6mz4wZve5uLkt90kFN_GZ29uXLVg1Zprjhr1GVLDgLVtrwkIRQ9hk_ZbQYDOFwqGf505NowWSDnpwZ5CTSYPx_Cut_X-Cnwk-6ggG5AZH9XmyCUWEpwMC6bARI7NSWRBWdns8v8w90Ud0j7cIy9z7fi03bhNSXD_qejrEnG4WnBDmur-K37yYmteWaz0Qc2LNFJtRpHjFnLE-A9PWOl-6Ph7l5dpPN6gNc8TwmgdI2co1m6-hW0r83qfv_GGA4TIbtik"
+                />
+              </div>
+              <div
+                class="flex items-center gap-1.5 text-primary font-label text-[11px] font-medium"
+              >
+                <span
+                  class="material-symbols-outlined text-[14px]"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >timer</span
+                >
+                <span>Due in 4 hours</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- Column: Done -->
+        <div class="space-y-6" id="doneContainer">
+          <div class="flex items-center justify-between px-2 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+              <h3 class="font-headline font-bold text-on-surface tracking-wide">
+                Done
+              </h3>
+            </div>
+            <span
+              class="text-xs font-label text-on-surface-variant bg-surface-container-high px-2 py-1 rounded"
+              >1</span
+            >
+          </div>
+          <article id="doneList"></article>
+          <!-- Completed Task -->
+          <article
+            class="bg-surface-container-low/40 p-6 rounded-xl border border-outline-variant/5 group transition-all duration-300 opacity-60 hover:opacity-100"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <span
+                class="px-2 py-0.5 bg-secondary/10 text-[10px] text-secondary font-bold rounded uppercase tracking-tighter"
+                >Success</span
+              >
+              <span
+                class="material-symbols-outlined text-secondary"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >check_circle</span
+              >
+            </div>
+            <h4
+              class="text-on-surface font-headline font-semibold mb-2 line-through decoration-primary/30"
+            >
+              Initial Mockups
+            </h4>
+            <p
+              class="text-on-surface-variant text-sm font-light mb-6 line-clamp-2"
+            >
+              Create high-fidelity Figma components for the workspace shell and
+              sidebar navigation.
+            </p>
+            <div class="flex justify-between items-center">
+              <div class="flex -space-x-2">
+                <img
+                  alt="User"
+                  class="w-7 h-7 rounded-full border border-surface-container-low"
+                  data-alt="Young man's headshot with a friendly smile, outdoor lighting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBee9ORadIh1rYoNfG1BYB26L10L1vOTEtIhp_gU0m64pRz5lmusbfOIKLIMRvur1H_dm4-WkWrRfBwLUmnRoCzYETiUeQZX6_7O2v5XV6xhFXfw7x97ADzCzX8vlcKmSsKChP_9CA4vIJaUKIIpTTRJLhxRgsohM8-9htrtqptF_rhaKWmLxoBu88GRUSRm9ub5sJcuJJmfnDh8WaHuHNzkhSwWKBBz4-I6fE7xp9-JcY9wAGhxDf0nXNFCI6Li-8GdRlGZ4G_Ejc"
+                />
+              </div>
+              <div
+                class="flex items-center gap-1.5 text-secondary font-label text-[11px] font-medium"
+              >
+                <span>Completed 2h ago</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <!-- Floating Action Insight (Contextual Bento element) -->
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div
+          class="md:col-span-3 bg-gradient-to-r from-surface-container-low to-surface-container-high p-8 rounded-2xl nebula-shadow flex items-center justify-between border border-outline-variant/10"
+        >
+          <div class="flex items-center gap-6">
+            <div
+              class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-primary text-3xl"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >auto_awesome</span
+              >
+            </div>
+            <div>
+              <h4 class="font-headline font-bold text-xl text-on-surface">
+                Efficiency Spike
+              </h4>
+              <p class="text-on-surface-variant text-sm mt-1 max-w-lg">
+                Your team finished 3 tasks ahead of schedule this week. The
+                project timeline has been updated automatically.
+              </p>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="text-primary font-headline text-3xl font-bold"
+              >+12%</span
+            >
+            <p
+              class="text-[10px] text-on-surface-variant font-label uppercase tracking-widest mt-1"
+            >
+              Productivity
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-surface-container-high p-6 rounded-2xl flex flex-col justify-center items-center text-center border border-outline-variant/10 nebula-shadow"
+        >
+          <span class="text-on-surface-variant text-xs font-label mb-2"
+            >Team Focus Mode</span
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-0 bg-primary/20 blur-xl rounded-full"
+            ></div>
+            <span
+              class="relative material-symbols-outlined text-primary text-4xl"
+              >center_focus_weak</span
+            >
+          </div>
+          <button
+            class="mt-4 text-xs font-bold font-headline text-primary hover:text-white transition-colors"
+          >
+            ACTIVATE
+          </button>
+        </div>
+      </div>
+      <div
+        id="taskModal"
+        class="fixed inset-0 z-[9999] hidden flex items-center justify-center bg-black/60 backdrop-blur-sm"
+      >
+        <div class="bg-surface p-6 rounded-xl w-96">
+          <h3>Edit Task</h3>
+
+          <input id="editTitle" class="w-full bg-surface-container-lowest/50 border border-outline-variant/10 rounded-xl pl-11 pr-4 py-2.5 text-sm text-on-surface mb-3" />
+
+          <select id="editStatus" class="w-full bg-surface-container-lowest/50 border border-outline-variant/10 rounded-xl pl-11 pr-4 py-2.5 text-sm text-on-surface appearance-none mb-3">
+            <option value="todo">To Do</option>
+            <option value="inprogress">In Progress</option>
+            <option value="done">Done</option>
+          </select>
+
+          <button onclick="updateTask()">Save</button>
+        </div>
+      </div>
+    </main>
+    <!-- Background Decoration (Nebula effect) -->
+    <div
+      class="fixed top-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-primary/5 blur-[120px] rounded-full pointer-events-none -z-10"
+    ></div>
+    <div
+      class="fixed bottom-[-10%] left-[-5%] w-[30vw] h-[30vw] bg-secondary/5 blur-[100px] rounded-full pointer-events-none -z-10"
+    ></div>
+    <!-- <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { auth } from "../js/firebase.js";
+      import { db } from "../js/firebase.js";
+      import { listenAuth } from "../js/auth.js";
+      import { getTasksByProject } from "../js/taskService.js";
+      import {
+        doc,
+        getDoc,
+      } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+      import { getCurrentUserData } from "../js/user.js";
+      import {
+        collection,
+        getDocs,
+        query,
+        where,
+      } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+
+      const projectId = localStorage.getItem("currentProjectId");
+      console.log("📦 Current Project ID:", projectId);
+
+      const q = query(
+        collection(db, "tasks"),
+        where("projectId", "==", projectId),
+      );
+
+      console.log("🔍 Query Tasks for Project:", projectId);
+
+      const snapshot = await getDocs(q);
+
+      console.log("📊 Total Task Found:", snapshot.size);
+
+      if (!projectId) {
+        alert("Tidak ada project dipilih");
+        window.location.href = "projects.html";
+      }
+
+      document.getElementById("createTaskBtn").addEventListener("click", () => {
+        window.location.href = "actionTask.html";
+      });
+
+      listenAuth(async (user) => {
+        if (!user) {
+          window.location.href = "/pages/auth/login.html";
+          return;
+        }
+
+        try {
+            const userData = await getUserData(user.uid);
+            const projects = await getProjects();
+
+            console.log(projects);
+            console.log("USER:", user);
+            console.log("DATA:", userData);
+            console.log("User aktif:", userData.nama);
+        } catch (err) {
+          console.error("Gagal ambil data user:", err);
+        }
+
+        document.getElementById("userName").textContent = userData.nama;
+        document.getElementById("userRole").textContent = userData.role;
+
+        getCurrentUserData((user) => {
+          if (user.role !== "Leader") {
+            document.getElementById("newProjectBtn").style.display = "none";
+            document.getElementById("createTaskBtn").style.display = "none";
+          }
+        });
+
+        console.log("User ready");
+
+        await loadTasks();
+      });
+
+      async function loadTasks() {
+        try {
+          const projectId = localStorage.getItem("currentProjectId");
+
+          const tasks = await getTasksByProject(projectId);
+
+          const todoList = document.getElementById("todoList");
+          const progressList = document.getElementById("progressList");
+          const doneList = document.getElementById("doneList");
+
+          todoList.innerHTML = "";
+          progressList.innerHTML = "";
+          doneList.innerHTML = "";
+
+          tasks.forEach((task) => {
+            const card = `
+        <article class="bg-surface-container-low p-4 rounded-xl border mb-3">
+          <h4 class="font-bold text-on-surface">${task.title}</h4>
+          <p class="text-xs text-on-surface-variant">${task.status}</p>
+        </article>
+      `;
+
+            if (task.status === "todo") {
+              todoList.innerHTML += card;
+            } else if (task.status === "inprogress") {
+              progressList.innerHTML += card;
+            } else if (task.status === "done") {
+              doneList.innerHTML += card;
+            }
+          });
+        } catch (err) {
+          console.error("❌ loadTasks error:", err);
+        }
+      }
+    </script> -->
+    <script type="module" src="../pages/tasks.js"></script>
+  </body>
+</html>

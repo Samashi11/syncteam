@@ -1,0 +1,330 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TeamSync | Login</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#ccc3d8",
+              "on-background": "#dfe2ef",
+              "surface-bright": "#353943",
+              "surface-container-low": "#181b25",
+              "on-tertiary-fixed": "#151c2a",
+              "on-secondary-container": "#c9aeff",
+              "tertiary-fixed": "#dce2f6",
+              "surface-container-high": "#262a34",
+              "inverse-surface": "#dfe2ef",
+              background: "#0f131c",
+              "primary-fixed-dim": "#cebdff",
+              "surface-container-lowest": "#0a0e17",
+              "secondary-fixed-dim": "#d2bbff",
+              secondary: "#d2bbff",
+              "on-tertiary-container": "#e0e6fa",
+              "inverse-primary": "#674bb5",
+              "surface-container-highest": "#31353f",
+              primary: "#cebdff",
+              "on-error": "#690005",
+              "surface-tint": "#cebdff",
+              "on-surface": "#dfe2ef",
+              "secondary-fixed": "#eaddff",
+              outline: "#958da1",
+              error: "#ffb4ab",
+              "on-primary": "#381385",
+              "secondary-container": "#6001d1",
+              "outline-variant": "#4a4455",
+              "primary-container": "#6f54be",
+              surface: "#0f131c",
+              "error-container": "#93000a",
+              "surface-variant": "#31353f",
+              "on-secondary-fixed-variant": "#5a00c6",
+              "on-primary-fixed-variant": "#4f319c",
+              "on-primary-container": "#ebe1ff",
+              "surface-dim": "#0f131c",
+              "on-tertiary-fixed-variant": "#404757",
+              "on-primary-fixed": "#21005e",
+              "surface-container": "#1c1f29",
+              "on-tertiary": "#2a303f",
+              "on-error-container": "#ffdad6",
+              "inverse-on-surface": "#2c303a",
+              "primary-fixed": "#e8ddff",
+              "on-secondary-fixed": "#25005a",
+              "tertiary-container": "#606778",
+              "on-secondary": "#3f008e",
+              "tertiary-fixed-dim": "#c0c6da",
+              tertiary: "#c0c6da",
+            },
+            fontFamily: {
+              headline: ["Space Grotesk", "sans-serif"],
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+              label: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      body {
+        background-color: #0a0e17;
+        overflow: hidden;
+      }
+      .nebula-glow {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(124, 58, 237, 0.15) 0%,
+          rgba(124, 58, 237, 0) 70%
+        );
+        border-radius: 50%;
+        filter: blur(60px);
+        z-index: 0;
+        pointer-events: none;
+      }
+      .glass-card {
+        background: rgba(49, 53, 63, 0.4);
+        backdrop-filter: blur(20px);
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.4),
+          0 0 15px rgba(124, 58, 237, 0.05);
+      }
+      .input-glow:focus-within {
+        box-shadow: 0 0 10px rgba(206, 189, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body
+    class="font-body text-on-background min-h-screen flex items-center justify-center relative"
+  >
+    <!-- Ambient Atmospheric Elements -->
+    <div class="nebula-glow -top-48 -left-48" id="glow1"></div>
+    <div class="nebula-glow -bottom-48 -right-48" id="glow2"></div>
+    <div
+      class="absolute inset-0 opacity-20 pointer-events-none"
+      style="
+        background-image: radial-gradient(#4a4455 0.5px, transparent 0.5px);
+        background-size: 24px 24px;
+      "
+    ></div>
+    <main class="w-full max-w-md px-6 z-10">
+      <!-- Brand Identity -->
+      <div class="flex flex-col items-center mb-10 space-y-2">
+        <div
+          class="text-3xl font-headline font-bold bg-gradient-to-br from-[#cebdff] to-[#6f54be] bg-clip-text text-transparent tracking-tight"
+        >
+          TeamSync
+        </div>
+        <p
+          class="text-on-surface-variant font-label text-sm tracking-[0.2em] uppercase"
+        >
+          The Celestial Workspace
+        </p>
+      </div>
+      <!-- Login Card -->
+      <div class="glass-card rounded-2xl p-8 border border-[#4a4455]/15">
+        <div class="mb-8">
+          <h1
+            class="text-2xl font-headline font-semibold text-on-background mb-1"
+          >
+            Login
+          </h1>
+          <p class="text-on-surface-variant text-sm">
+            Welcome back to your digital observatory.
+          </p>
+        </div>
+        <form class="space-y-6" onsubmit="event.preventDefault()">
+          <!-- Email Field -->
+          <div class="space-y-2">
+            <label
+              class="block text-xs font-label text-on-surface-variant ml-1 uppercase tracking-wider"
+              for="email"
+              >Email Address</label
+            >
+            <div class="relative group input-glow">
+              <div
+                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-on-surface-variant"
+              >
+                <span class="material-symbols-outlined text-lg"
+                  >alternate_email</span
+                >
+              </div>
+              <input
+                class="block w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-secondary focus:ring-0 text-on-background py-3 pl-10 pr-4 transition-all duration-300 placeholder:text-[#4a4455]"
+                id="email"
+                placeholder="student@university.edu"
+                type="email"
+              />
+            </div>
+          </div>
+          <!-- Password Field -->
+          <div class="space-y-2">
+            <div class="flex justify-between items-center">
+              <label
+                class="block text-xs font-label text-on-surface-variant ml-1 uppercase tracking-wider"
+                for="password"
+                >Password</label
+              >
+              <a
+                class="text-[10px] text-primary hover:text-on-background transition-colors font-label uppercase tracking-tighter"
+                href="#"
+                >Forgot Password?</a
+              >
+            </div>
+            <div class="relative group input-glow">
+              <div
+                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-on-surface-variant"
+              >
+                <span class="material-symbols-outlined text-lg">lock</span>
+              </div>
+              <input
+                class="block w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-secondary focus:ring-0 text-on-background py-3 pl-10 pr-12 transition-all duration-300"
+                id="password"
+                placeholder="••••••••"
+                type="password"
+              />
+              <button
+                class="absolute inset-y-0 right-0 pr-3 flex items-center text-on-surface-variant hover:text-on-background"
+                type="button"
+              >
+                <span class="material-symbols-outlined text-lg"
+                  >visibility</span
+                >
+              </button>
+            </div>
+          </div>
+          <!-- Remember Me -->
+          <div class="flex items-center space-x-2 px-1">
+            <input
+              class="w-4 h-4 rounded border-outline-variant bg-surface-container-lowest text-primary-container focus:ring-primary focus:ring-offset-surface-container-lowest focus:ring-offset-2"
+              id="remember"
+              type="checkbox"
+            />
+            <label
+              class="text-xs text-on-surface-variant cursor-pointer select-none"
+              for="remember"
+              >Remember this device</label
+            >
+          </div>
+          <!-- Primary Action -->
+          <button
+            class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold rounded-xl shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] active:scale-[0.98] transition-all duration-300"
+            type="submit"
+          >
+            Sign In
+          </button>
+        </form>
+        <div class="mt-8 pt-6 border-t border-[#4a4455]/10 text-center">
+          <p class="text-on-surface-variant text-sm">
+            New to TeamSync?
+            <a class="text-primary font-medium hover:underline ml-1" href="#"
+              >Create an account</a
+            >
+          </p>
+        </div>
+      </div>
+      <!-- Bottom Branding Support -->
+      <div class="mt-12 text-center opacity-40">
+        <div class="flex justify-center gap-6 mb-4">
+          <span class="material-symbols-outlined text-on-background"
+            >auto_awesome</span
+          >
+          <span class="material-symbols-outlined text-on-background"
+            >rocket_launch</span
+          >
+          <span class="material-symbols-outlined text-on-background">hub</span>
+        </div>
+        <p class="text-[10px] font-label tracking-widest uppercase">
+          Precision. Collaboration. Focus.
+        </p>
+      </div>
+    </main>
+    <script>
+      // Micro-interaction: Mouse tracking nebula glow
+      document.addEventListener("mousemove", (e) => {
+        const glow1 = document.getElementById("glow1");
+        const glow2 = document.getElementById("glow2");
+
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        // Move glows subtly based on cursor position
+        const moveX1 = (mouseX - window.innerWidth / 2) * 0.05;
+        const moveY1 = (mouseY - window.innerHeight / 2) * 0.05;
+
+        const moveX2 = (mouseX - window.innerWidth / 2) * -0.05;
+        const moveY2 = (mouseY - window.innerHeight / 2) * -0.05;
+
+        glow1.style.transform = `translate(${moveX1}px, ${moveY1}px)`;
+        glow2.style.transform = `translate(${moveX2}px, ${moveY2}px)`;
+      });
+
+      // Animation for form entrance
+      window.addEventListener("load", () => {
+        const card = document.querySelector(".glass-card");
+        card.style.opacity = "0";
+        card.style.transform = "translateY(20px)";
+
+        setTimeout(() => {
+          card.style.transition = "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)";
+          card.style.opacity = "1";
+          card.style.transform = "translateY(0)";
+        }, 100);
+      });
+    </script>
+    <script type="module">
+      import { login } from "../../js/auth.js";
+
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        try {
+          const user = await login(email, password);
+
+          console.log("Login success:", user);
+
+          // redirect
+          window.location.href = "../dashboard.html";
+        } catch (err) {
+          console.error(err);
+          alert("Login gagal bro");
+        }
+      });
+    </script>
+    <script type="module">
+      import { redirectIfLoggedIn } from "../../js/session.js";
+      redirectIfLoggedIn();
+    </script>
+  </body>
+</html>

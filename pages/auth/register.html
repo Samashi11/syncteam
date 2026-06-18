@@ -1,0 +1,385 @@
+<!doctype html>
+
+<html class="dark" lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TeamSync | Create Your Account</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#25005a",
+              "on-primary": "#381385",
+              "primary-container": "#6f54be",
+              "surface-container-low": "#181b25",
+              "on-primary-container": "#ebe1ff",
+              "surface-dim": "#0f131c",
+              "inverse-primary": "#674bb5",
+              "tertiary-fixed-dim": "#c0c6da",
+              "primary-fixed": "#e8ddff",
+              "surface-variant": "#31353f",
+              "primary-fixed-dim": "#cebdff",
+              "on-primary-fixed-variant": "#4f319c",
+              background: "#0f131c",
+              "surface-container-high": "#262a34",
+              "on-background": "#dfe2ef",
+              "on-surface-variant": "#ccc3d8",
+              "on-primary-fixed": "#21005e",
+              "secondary-fixed-dim": "#d2bbff",
+              "on-surface": "#dfe2ef",
+              "tertiary-container": "#606778",
+              "secondary-fixed": "#eaddff",
+              "on-error": "#690005",
+              "inverse-surface": "#dfe2ef",
+              primary: "#cebdff",
+              "error-container": "#93000a",
+              "outline-variant": "#4a4455",
+              "on-error-container": "#ffdad6",
+              "surface-container-lowest": "#0a0e17",
+              error: "#ffb4ab",
+              "on-tertiary-fixed-variant": "#404757",
+              "secondary-container": "#6001d1",
+              "tertiary-fixed": "#dce2f6",
+              "surface-container": "#1c1f29",
+              surface: "#0f131c",
+              outline: "#958da1",
+              secondary: "#d2bbff",
+              "inverse-on-surface": "#2c303a",
+              "on-tertiary": "#2a303f",
+              "surface-tint": "#cebdff",
+              "on-tertiary-fixed": "#151c2a",
+              "on-tertiary-container": "#e0e6fa",
+              "on-secondary-fixed-variant": "#5a00c6",
+              tertiary: "#c0c6da",
+              "surface-bright": "#353943",
+              "on-secondary": "#3f008e",
+              "surface-container-highest": "#31353f",
+              "on-secondary-container": "#c9aeff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Space Grotesk"],
+              display: ["Space Grotesk"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0a0e17;
+        overflow-x: hidden;
+      }
+
+      .nebula-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background:
+          radial-gradient(
+            circle at 20% 30%,
+            rgba(111, 84, 190, 0.15) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(56, 19, 133, 0.2) 0%,
+            transparent 50%
+          ),
+          #0a0e17;
+      }
+
+      .nebula-glow {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(206, 189, 255, 0.03) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        filter: blur(60px);
+        pointer-events: none;
+      }
+
+      .glass-card {
+        background: rgba(49, 53, 63, 0.4);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(149, 141, 161, 0.1);
+      }
+
+      .primary-gradient-btn {
+        background: linear-gradient(135deg, #cebdff 0%, #6f54be 100%);
+        box-shadow: 0 0 20px rgba(111, 84, 190, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .primary-gradient-btn:hover {
+        box-shadow: 0 0 30px rgba(111, 84, 190, 0.5);
+        transform: translateY(-1px);
+      }
+
+      .input-glow:focus-within {
+        border-bottom-color: #d2bbff;
+        box-shadow: 0 4px 12px -2px rgba(210, 187, 255, 0.1);
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body class="font-body text-on-background min-h-screen flex flex-col">
+    <div class="nebula-bg"></div>
+    <div class="nebula-glow" style="top: -10%; right: -10%"></div>
+    <div class="nebula-glow" style="bottom: -10%; left: -10%"></div>
+    <!-- Top Navigation (Contextually Suppressed, showing only Brand for Registration) -->
+    <header
+      class="fixed top-0 w-full z-50 bg-surface-dim/40 backdrop-blur-xl px-12 py-6 flex justify-between items-center"
+    >
+      <div class="font-headline text-xl font-bold tracking-tight text-primary">
+        TeamSync
+      </div>
+      <div class="hidden md:flex gap-8 items-center">
+        <a
+          class="font-body text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300"
+          href="#"
+          >Help Center</a
+        >
+        <a
+          class="font-body text-label-sm text-primary font-bold active:scale-95 transition-transform"
+          href="#"
+          >Login</a
+        >
+      </div>
+    </header>
+    <main class="flex-grow flex items-center justify-center px-6 pt-24 pb-12">
+      <div
+        class="glass-card w-full max-w-[500px] p-8 md:p-12 rounded-xl shadow-2xl relative overflow-hidden"
+      >
+        <!-- Decorative Accent -->
+        <div
+          class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent"
+        ></div>
+        <div class="text-center mb-10">
+          <h1
+            class="font-headline text-headline-sm text-on-surface text-3xl font-bold mb-3"
+          >
+            Create Your Account
+          </h1>
+          <p class="font-body text-on-surface-variant opacity-80">
+            Join your team in the celestial workspace.
+          </p>
+        </div>
+        <form class="space-y-6" onsubmit="event.preventDefault()">
+          <!-- Full Name -->
+          <div class="space-y-2">
+            <label
+              class="block font-label text-xs font-medium text-on-surface-variant uppercase tracking-widest ml-1"
+              >Nama Lengkap</label
+            >
+            <div
+              class="relative flex items-center bg-surface-container-lowest rounded-lg border-b-2 border-outline-variant/30 transition-all duration-300 input-glow group"
+            >
+              <span
+                class="material-symbols-outlined absolute left-4 text-outline group-focus-within:text-secondary"
+                >person</span
+              >
+              <input
+                class="w-full bg-transparent border-none py-4 pl-12 pr-4 focus:ring-0 text-on-surface placeholder:text-outline/50 font-body"
+                placeholder="John Doe"
+                type="text"
+              />
+            </div>
+          </div>
+          <!-- Email Address -->
+          <div class="space-y-2">
+            <label
+              class="block font-label text-xs font-medium text-on-surface-variant uppercase tracking-widest ml-1"
+              >Alamat Email</label
+            >
+            <div
+              class="relative flex items-center bg-surface-container-lowest rounded-lg border-b-2 border-outline-variant/30 transition-all duration-300 input-glow group"
+            >
+              <span
+                class="material-symbols-outlined absolute left-4 text-outline group-focus-within:text-secondary"
+                >mail</span
+              >
+              <input
+                class="w-full bg-transparent border-none py-4 pl-12 pr-4 focus:ring-0 text-on-surface placeholder:text-outline/50 font-body"
+                placeholder="name@company.com"
+                type="email"
+              />
+            </div>
+          </div>
+          <!-- Password Row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Password -->
+            <div class="space-y-2">
+              <label
+                class="block font-label text-xs font-medium text-on-surface-variant uppercase tracking-widest ml-1"
+                >Kata Sandi</label
+              >
+              <div
+                class="relative flex items-center bg-surface-container-lowest rounded-lg border-b-2 border-outline-variant/30 transition-all duration-300 input-glow group"
+              >
+                <span
+                  class="material-symbols-outlined absolute left-4 text-outline group-focus-within:text-secondary"
+                  >lock</span
+                >
+                <input
+                  class="w-full bg-transparent border-none py-4 pl-12 pr-12 focus:ring-0 text-on-surface placeholder:text-outline/50 font-body"
+                  id="password-field"
+                  placeholder="••••••••"
+                  type="password"
+                />
+                <button
+                  class="absolute right-4 text-outline hover:text-on-surface transition-colors"
+                  onclick="togglePassword('password-field', 'toggle-icon')"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined" id="toggle-icon"
+                    >visibility</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Confirm Password -->
+            <div class="space-y-2">
+              <label
+                class="block font-label text-xs font-medium text-on-surface-variant uppercase tracking-widest ml-1"
+                >Konfirmasi</label
+              >
+              <div
+                class="relative flex items-center bg-surface-container-lowest rounded-lg border-b-2 border-outline-variant/30 transition-all duration-300 input-glow group"
+              >
+                <span
+                  class="material-symbols-outlined absolute left-4 text-outline group-focus-within:text-secondary"
+                  >lock</span
+                >
+                <input
+                  class="w-full bg-transparent border-none py-4 pl-12 pr-4 focus:ring-0 text-on-surface placeholder:text-outline/50 font-body"
+                  placeholder="••••••••"
+                  type="password"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="pt-4">
+            <button
+              class="primary-gradient-btn w-full py-4 rounded-lg text-on-primary font-headline font-bold text-lg active:scale-[0.98] transition-transform"
+            >
+              Daftar
+            </button>
+          </div>
+        </form>
+        <div class="mt-8 text-center">
+          <p class="font-body text-on-surface-variant text-sm">
+            Sudah punya akun?
+            <a class="text-primary font-bold hover:underline ml-1" href="#"
+              >Masuk</a
+            >
+          </p>
+        </div>
+        <!-- Atmospheric Detail -->
+        <div
+          class="mt-12 flex items-center justify-center gap-4 opacity-30 grayscale"
+        >
+          <div class="h-[1px] w-12 bg-on-surface-variant"></div>
+          <div
+            class="font-headline text-[10px] tracking-[0.3em] text-on-surface-variant uppercase"
+          >
+            Nova Glass Edition
+          </div>
+          <div class="h-[1px] w-12 bg-on-surface-variant"></div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full py-12 bg-surface-container-lowest flex flex-col md:flex-row justify-between items-center px-12 gap-6"
+    >
+      <div class="font-headline text-lg font-semibold text-primary">
+        TeamSync
+      </div>
+      <div class="flex gap-8 font-body text-label-sm text-on-surface-variant">
+        <a
+          class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
+          href="#"
+          >Privacy Policy</a
+        >
+        <a
+          class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
+          href="#"
+          >Terms of Service</a
+        >
+        <a
+          class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
+          href="#"
+          >Help Center</a
+        >
+      </div>
+      <div class="font-body text-label-sm text-on-surface-variant opacity-60">
+        © 2024 TeamSync Observatory. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      function togglePassword(fieldId, iconId) {
+        const field = document.getElementById(fieldId);
+        const icon = document.getElementById(iconId);
+        if (field.type === "password") {
+          field.type = "text";
+          icon.textContent = "visibility_off";
+        } else {
+          field.type = "password";
+          icon.textContent = "visibility";
+        }
+      }
+
+      // Lightweight background parallax effect
+      document.addEventListener("mousemove", (e) => {
+        const glows = document.querySelectorAll(".nebula-glow");
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+
+        glows.forEach((glow, index) => {
+          const speed = (index + 1) * 20;
+          glow.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+        });
+      });
+    </script>
+  </body>
+</html>

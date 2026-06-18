@@ -1,0 +1,646 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TeamSync | Contribution Tracking</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0e17;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #31353f;
+        border-radius: 10px;
+      }
+      .nebula-glow {
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.4),
+          0 0 15px rgba(124, 58, 237, 0.05);
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#25005a",
+              "on-surface-variant": "#ccc3d8",
+              "secondary-fixed": "#eaddff",
+              "tertiary-fixed-dim": "#c0c6da",
+              background: "#0f131c",
+              "primary-fixed-dim": "#cebdff",
+              "surface-container-lowest": "#0a0e17",
+              secondary: "#d2bbff",
+              tertiary: "#c0c6da",
+              "surface-variant": "#31353f",
+              "inverse-primary": "#674bb5",
+              primary: "#cebdff",
+              "surface-container-low": "#181b25",
+              error: "#ffb4ab",
+              "error-container": "#93000a",
+              "surface-bright": "#353943",
+              "on-error-container": "#ffdad6",
+              "inverse-on-surface": "#2c303a",
+              "primary-fixed": "#e8ddff",
+              "inverse-surface": "#dfe2ef",
+              "secondary-fixed-dim": "#d2bbff",
+              surface: "#0f131c",
+              "outline-variant": "#4a4455",
+              "on-tertiary-fixed-variant": "#404757",
+              "on-secondary-container": "#c9aeff",
+              "surface-tint": "#cebdff",
+              "on-primary": "#381385",
+              "surface-container-high": "#262a34",
+              "on-tertiary-container": "#e0e6fa",
+              "on-primary-fixed": "#21005e",
+              "surface-dim": "#0f131c",
+              "on-primary-fixed-variant": "#4f319c",
+              "surface-container": "#1c1f29",
+              "tertiary-fixed": "#dce2f6",
+              "on-background": "#dfe2ef",
+              "on-secondary": "#3f008e",
+              "on-tertiary": "#2a303f",
+              "on-secondary-fixed-variant": "#5a00c6",
+              "surface-container-highest": "#31353f",
+              "on-error": "#690005",
+              "on-tertiary-fixed": "#151c2a",
+              "primary-container": "#6f54be",
+              "secondary-container": "#6001d1",
+              outline: "#958da1",
+              "on-surface": "#dfe2ef",
+              "on-primary-container": "#ebe1ff",
+              "tertiary-container": "#606778",
+            },
+            fontFamily: {
+              headline: ["Space Grotesk"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-surface-container-lowest text-on-surface font-body selection:bg-primary/30 selection:text-primary"
+  >
+    <!-- SideNavBar (Rail) -->
+    <aside
+      class="fixed left-0 top-0 h-full z-40 flex flex-col p-6 bg-[#181b25]/60 backdrop-blur-xl w-64 border-r border-[#4a4455]/15 font-['Space_Grotesk'] text-sm tracking-wide shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+    >
+      <div class="mb-10">
+        <h1
+          class="text-2xl font-bold bg-gradient-to-br from-[#cebdff] to-[#6f54be] bg-clip-text text-transparent"
+        >
+          TeamSync
+        </h1>
+        <p class="text-xs text-on-surface-variant/60 mt-1">
+          The Celestial Workspace
+        </p>
+      </div>
+      <nav class="flex flex-col gap-2 flex-grow">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300"
+          href="dashboard.html"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/new20 transition-all duration-300"
+          href="projects.html"
+        >
+          <span class="material-symbols-outlined">folder_shared</span>
+          <span>Projects</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300"
+          href="tasks.html"
+        >
+          <span class="material-symbols-outlined">assignment</span>
+          <span>Tasks</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300"
+          href="logs.html"
+        >
+          <span class="material-symbols-outlined">history</span>
+          <span>Activity Log</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#cebdff] bg-[#31353f]/40 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.1)] active:scale-95 duration-150"
+          href="contribution.html"
+        >
+          <span class="material-symbols-outlined">stars</span>
+          <span>Contribution</span>
+        </a>
+      </nav>
+      <button
+        class="mt-auto bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold py-3 rounded-xl shadow-lg hover:opacity-90 transition-opacity"
+        id="newProjectBtn"
+      >
+        New Project
+      </button>
+    </aside>
+    <!-- TopAppBar -->
+    <header
+      class="fixed top-0 right-0 left-64 h-20 flex justify-between items-center px-8 z-30 bg-[#0a0e17]/40 backdrop-blur-md font-['Space_Grotesk'] font-medium"
+    >
+      <div
+        class="flex items-center gap-4 bg-surface-container-low/50 px-4 py-2 rounded-full border border-outline-variant/10 focus-within:ring-1 focus-within:ring-primary/30 transition-all"
+      >
+        <span class="material-symbols-outlined text-on-surface-variant"
+          >search</span
+        >
+        <input
+          class="bg-transparent border-none focus:ring-0 text-sm w-64 placeholder:text-on-surface-variant/40"
+          placeholder="Search analytics..."
+          type="text"
+        />
+      </div>
+      <div class="flex items-center gap-6">
+        <button
+          class="text-on-surface-variant hover:text-white transition-colors relative"
+        >
+          <span class="material-symbols-outlined">notifications</span>
+          <span
+            class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"
+          ></span>
+        </button>
+        <button
+          class="text-on-surface-variant hover:text-white transition-colors"
+        >
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div
+          class="w-10 h-10 rounded-full overflow-hidden border border-primary/20"
+        >
+          <img
+            alt="User Profile"
+            class="w-full h-full object-cover"
+            data-alt="close-up portrait of a professional man with a confident expression against a dark blurred architectural background"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7ZSkElV9wHQsIls-eeFbwdJ4iX13-waDnHN9TTrenxNj1ApskA5JfF992W978UArIMRjOd7yaU_iU4MNuqTsufBttXE-qTlrxiQC9hnzWO2NvfWrJmU42c0yOjJM2cXp4g0FpfBBbpXPbCQh-6XAPFW5iOMlbT6mMarpE2-KMygrv3YfHeutt-JBhzcONeNpkKCbTlBxk4JhpNmDcTd9hhBGVsogFhuD-DY1ImXRlPB45adYcZVMwCqLjIozOCxBmlALAJvxv60g"
+          />
+        </div>
+      </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 pt-28 px-12 pb-12 min-h-screen">
+      <!-- Header Section -->
+      <div class="mb-12 flex justify-between items-end">
+        <div>
+          <h2
+            class="font-headline text-4xl font-bold tracking-tight text-on-surface mb-2"
+          >
+            Contribution Tracking
+          </h2>
+          <p class="text-on-surface-variant font-light text-lg">
+            Real-time team performance metrics and interaction velocity.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div
+            class="bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/10 flex items-center gap-3"
+          >
+            <span
+              class="text-xs uppercase tracking-widest text-on-surface-variant"
+              >Current Phase:</span
+            >
+            <span class="text-sm font-bold text-primary">Beta Centauri</span>
+          </div>
+        </div>
+      </div>
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-12 gap-8">
+        <!-- Global Participation Score (Donut) -->
+        <div
+          class="col-span-12 lg:col-span-4 bg-surface-container-low rounded-xl p-8 nebula-glow relative overflow-hidden group"
+        >
+          <div
+            class="absolute -top-12 -right-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500"
+          ></div>
+          <h3
+            class="font-headline text-lg font-medium mb-8 flex items-center gap-2"
+          >
+            <span
+              class="material-symbols-outlined text-primary"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >incomplete_circle</span
+            >
+            Team Participation
+          </h3>
+          <div class="flex flex-col items-center justify-center py-4">
+            <div class="relative w-48 h-48 flex items-center justify-center">
+              <svg class="w-full h-full transform -rotate-90">
+                <circle
+                  class="text-surface-container-high"
+                  cx="96"
+                  cy="96"
+                  fill="transparent"
+                  r="88"
+                  stroke="currentColor"
+                  stroke-width="12"
+                ></circle>
+                <circle
+                  class="text-primary transition-all duration-1000"
+                  cx="96"
+                  cy="96"
+                  fill="transparent"
+                  r="88"
+                  stroke="currentColor"
+                  stroke-dasharray="552.9"
+                  stroke-dashoffset="138"
+                  stroke-width="12"
+                ></circle>
+              </svg>
+              <div class="absolute flex flex-col items-center">
+                <span class="font-headline text-4xl font-bold">75%</span>
+                <span
+                  class="text-xs text-on-surface-variant uppercase tracking-widest"
+                  >Active</span
+                >
+              </div>
+            </div>
+            <div class="mt-8 grid grid-cols-2 gap-4 w-full">
+              <div
+                class="bg-surface-container-lowest/50 p-3 rounded-lg border border-outline-variant/5"
+              >
+                <span
+                  class="block text-[10px] text-on-surface-variant uppercase mb-1"
+                  >Weekly Growth</span
+                >
+                <span class="text-secondary font-bold text-lg">+12.4%</span>
+              </div>
+              <div
+                class="bg-surface-container-lowest/50 p-3 rounded-lg border border-outline-variant/5"
+              >
+                <span
+                  class="block text-[10px] text-on-surface-variant uppercase mb-1"
+                  >Target Velocity</span
+                >
+                <span class="text-primary font-bold text-lg">9.2/10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Member Contribution List (Bar Charts) -->
+        <div
+          class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-xl p-8 nebula-glow"
+        >
+          <div class="flex justify-between items-center mb-10">
+            <h3 class="font-headline text-lg font-medium">
+              Individual Impact Scores
+            </h3>
+            <div class="flex gap-2 text-xs">
+              <span class="flex items-center gap-1 text-on-surface-variant"
+                ><span class="w-2 h-2 rounded-full bg-primary"></span>
+                Commits</span
+              >
+              <span class="flex items-center gap-1 text-on-surface-variant ml-2"
+                ><span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Logic</span
+              >
+            </div>
+          </div>
+          <div class="space-y-8">
+            <!-- Member 1 -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-end">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full border border-primary/20 overflow-hidden"
+                  >
+                    <img
+                      alt="Sarah"
+                      class="w-full h-full object-cover"
+                      data-alt="portrait of a young smiling woman with long dark hair in a professional creative studio setting"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNVmkReLo8zAoca8ULaNDGwCwjfkV-eoU0_BBoKFNC9DO989OIGJ35d1yK24_l7zUoE8IKsIzX2NMgMOQ5R2O4Fdw36xVDh1M3Lr_mvl8lFnSZYk38B65rjiRHX4eE4kYY0OuEX5LwI1hrbKNYQVceAFs2zjWA2tvR3W4gjko1l1eS9YWvCsF5-JF6ZXMRPVujb0WcvpShlzPOLW1O-0lvUAeB7MJhV_VH4CVTPDiD4YUHoBPeh4kwp-N_uBBqIXZvsPLxTAlhuHI"
+                    />
+                  </div>
+                  <span class="font-medium text-on-surface">Sarah J.</span>
+                  <span
+                    class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full uppercase font-bold tracking-tighter"
+                    >Lead</span
+                  >
+                </div>
+                <span class="text-primary font-headline font-bold">34%</span>
+              </div>
+              <div
+                class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full"
+                  style="width: 34%"
+                ></div>
+              </div>
+            </div>
+            <!-- Member 2 -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-end">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full border border-primary/20 overflow-hidden"
+                  >
+                    <img
+                      alt="John"
+                      class="w-full h-full object-cover"
+                      data-alt="professional male portrait with short hair and modern glasses in a clean well-lit office background"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCcycwr1d-6qKUg5bCA3j8DcMbTOzM1fxe3UF4yph-pGaBV1T5OeAG8N6qptPAV69vJSUkBkRRKA5PuvrCH961O7Caqcyg3AgZ_98bE0NP4nvaTmhUtheMh9SN0IzUgRLftSAxZY1ITKaFPAsWzsg8D7a8jZKF9DU0F-1SNLsj7KkmcpExMmH-n5zsZS03notAi3s__MMwvj3IIVQEGG04xnfdO7ScYOkSPiPfk7wuhQ_98Hws53hL7ST4Hiw7murvqprbEDBnmSk"
+                    />
+                  </div>
+                  <span class="font-medium text-on-surface">John D.</span>
+                </div>
+                <span class="text-secondary font-headline font-bold">28%</span>
+              </div>
+              <div
+                class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-gradient-to-r from-secondary to-secondary-container rounded-full"
+                  style="width: 28%"
+                ></div>
+              </div>
+            </div>
+            <!-- Member 3 -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-end">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full border border-primary/20 overflow-hidden"
+                  >
+                    <img
+                      alt="Elena"
+                      class="w-full h-full object-cover"
+                      data-alt="close-up of a smiling woman with glasses and dark curly hair in a bright modern workspace"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO6V_tSkonrmDcZjdRpB9uk_fGJtJ5Rk_mdE7reQS9J-BAAoIL57UqFtQYK-QUN8-rMzugKtJAlmzHve9_xC1YjDv7hpknWd4NeJ1Z-Qo-3HsWTEVxsdDYuJkYEh2735dBMtNVaA0n6n-HD4Kp60Vod7uc1UBX1Yye-iM6w5cNv39TLRT6-exwlWo1oW9hPei22u4ZR9TMYNumuNxf3HShdaNfaVpGt-1MoU9jswPJNpAf99kJe453V8H3tH2Yh5nuoJhBD9DOykE"
+                    />
+                  </div>
+                  <span class="font-medium text-on-surface">Elena M.</span>
+                </div>
+                <span class="text-on-surface font-headline font-bold">21%</span>
+              </div>
+              <div
+                class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-white/20 rounded-full"
+                  style="width: 21%"
+                ></div>
+              </div>
+            </div>
+            <!-- Member 4 -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-end">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full border border-primary/20 overflow-hidden"
+                  >
+                    <img
+                      alt="Marcus"
+                      class="w-full h-full object-cover"
+                      data-alt="sharp portrait of a young man with focused expression in soft evening lighting"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI6SucWxeOyiRC8ddAaXism4Vi8z-RtTKgAsT4CxMSSo0g3M8VbbzhdXagX0ZOCV95uuhkRpwP_3Eh0vMHFkKyaFARqrDrWRehmkp_pr_P1hTbX296lo5kNmArVf2LWkRjQo9lZPJW4j-uz4OR5Aa80Eugu95te5sthgvlzH95cM_vS9TRK178S_t1wrlsXwflIbmuWlTIe89Xh9eFZotublbnfM9UxPcJ7MRhuTcSmvXjE5G3B5diSsh6ylFd-nNu1W4CVIwOcd4"
+                    />
+                  </div>
+                  <span class="font-medium text-on-surface">Marcus T.</span>
+                </div>
+                <span class="text-on-surface font-headline font-bold">17%</span>
+              </div>
+              <div
+                class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-white/10 rounded-full"
+                  style="width: 17%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Inactive Members Alert -->
+        <div
+          class="col-span-12 lg:col-span-5 bg-surface-container-low rounded-xl p-8 nebula-glow border-l-4 border-error/30"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <span
+              class="material-symbols-outlined text-error"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >warning</span
+            >
+            <h3 class="font-headline text-lg font-medium text-error">
+              Stalled Orbits
+            </h3>
+          </div>
+          <div class="space-y-6">
+            <div
+              class="flex items-center justify-between p-4 bg-error/5 rounded-lg border border-error/10"
+            >
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <img
+                    alt="Liam"
+                    class="w-10 h-10 rounded-full grayscale opacity-50"
+                    data-alt="studio portrait of a man with casual beard and neutral expression on gray background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBugusocOLXiTKOzbagq-SfCshIXVRXQOGI-X-qak2fgdGqziyePfF7kC1OLWxAJS2Rm5aa54PGxDKjB6t6oJI3xntcyzskNM6mr7lkCdXDDPCkB1Xcb783d-V38Ay81bi6L-1_2W6w-knUmm0IeP5ZX10gTqTtlMkVIRKY7f2pBvaUkU-auoPhTmFYX5QaHX6X2yd87AqV_hJ60Q88WrpXTlqzL737h1b83tG5NO8DbB84lAW9sWpBv5TpQHETwyK1ZcZVUJ25FDk"
+                  />
+                  <div
+                    class="absolute bottom-0 right-0 w-3 h-3 bg-error rounded-full border-2 border-[#181b25]"
+                  ></div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-sm">Liam K.</h4>
+                  <p class="text-xs text-error/60 font-light">
+                    Inactive for 4 days
+                  </p>
+                </div>
+              </div>
+              <button
+                class="px-3 py-1 bg-error/10 text-error text-[10px] rounded uppercase font-bold tracking-widest hover:bg-error/20 transition-colors"
+              >
+                Nudge
+              </button>
+            </div>
+            <div
+              class="flex items-center justify-between p-4 bg-error/5 rounded-lg border border-error/10"
+            >
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <img
+                    alt="Chloe"
+                    class="w-10 h-10 rounded-full grayscale opacity-50"
+                    data-alt="minimalist close-up portrait of a woman with natural light falling across her face"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh0EoQ7vqwlpkTiNL-95U0XaGYE9371bVDRDhui85MP9LeTOsTiIxMwdRqcq-nmDV3s7yI22sRGaUSLxANP0CjpPoLjVbWvQ7Yio8h_i9fy3ZkjQAz5q2dQar5lwRgtTE9hqpWbldNR48Kkikaznf2b72qXctG6YRV9B5TEjnAglr5AUdoJzj7d9Q9LqVagVJGnNs7BsLt2P_QM0r6Ecn9HxiBYAag24Q1S9MCbXCIrf15OMywght-3xyQM6EkXAYMsuGmQWZS714"
+                  />
+                  <div
+                    class="absolute bottom-0 right-0 w-3 h-3 bg-error rounded-full border-2 border-[#181b25]"
+                  ></div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-sm">Chloe W.</h4>
+                  <p class="text-xs text-error/60 font-light">
+                    Last seen 3 days ago
+                  </p>
+                </div>
+              </div>
+              <button
+                class="px-3 py-1 bg-error/10 text-error text-[10px] rounded uppercase font-bold tracking-widest hover:bg-error/20 transition-colors"
+              >
+                Nudge
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Interaction Heatmap / Futuristic Data Grid -->
+        <div
+          class="col-span-12 lg:col-span-7 bg-surface-container-low rounded-xl p-8 nebula-glow overflow-hidden relative"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-30 pointer-events-none"
+          ></div>
+          <h3 class="font-headline text-lg font-medium mb-6">
+            Interaction Velocity
+          </h3>
+          <div class="h-48 w-full flex items-end gap-1.5">
+            <!-- Symbolic Representation of a Wave/Bar Chart -->
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[20%]"
+            ></div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[35%]"
+            ></div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[55%]"
+            ></div>
+            <div
+              class="flex-1 bg-primary/20 border-t border-primary/50 rounded-t-sm h-[85%] relative group"
+            >
+              <div
+                class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded hidden group-hover:block"
+              >
+                PEAK
+              </div>
+            </div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[65%]"
+            ></div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[45%]"
+            ></div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[30%]"
+            ></div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[25%]"
+            ></div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[40%]"
+            ></div>
+            <div
+              class="flex-1 bg-secondary/20 border-t border-secondary/50 rounded-t-sm h-[75%]"
+            ></div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[50%]"
+            ></div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[60%]"
+            ></div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[40%]"
+            ></div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[20%]"
+            ></div>
+            <div
+              class="flex-1 bg-surface-container-high rounded-t-sm hover:bg-primary/40 transition-all cursor-pointer h-[15%]"
+            ></div>
+          </div>
+          <div
+            class="mt-4 flex justify-between text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/40"
+          >
+            <span>06:00</span>
+            <span>12:00</span>
+            <span>18:00</span>
+            <span>00:00</span>
+          </div>
+        </div>
+      </div>
+      <!-- Floating Focus Indicator -->
+      <div
+        class="fixed bottom-12 right-12 flex items-center gap-4 bg-primary/10 backdrop-blur-md px-6 py-4 rounded-full border border-primary/20 shadow-[0_0_20px_rgba(124,58,237,0.2)]"
+      >
+        <div
+          class="w-3 h-3 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#cebdff]"
+        ></div>
+        <span class="text-sm font-medium tracking-wide"
+          >Synthesizing real-time logs...</span
+        >
+      </div>
+    </main>
+    <script type="module" src="../pages/contribution.js"></script>
+    <!-- <script type="module">
+      import { getCurrentUserData } from "../js/user.js";
+      import { listenAuth } from "../js/auth.js";
+
+      listenAuth(async (user) => {
+        if (!user) {
+          window.location.href = "/pages/auth/login.html";
+          return;
+        }
+
+        try {
+          requireAuth(async (user) => {
+            const userData = await getUserData(user.uid);
+            const projects = await getProjects();
+
+            console.log(projects);
+            console.log("USER:", user);
+            console.log("DATA:", userData);
+            console.log("User aktif:", userData.nama);
+          });
+        } catch (err) {
+          console.error("Gagal ambil data user:", err);
+        }
+
+        document.getElementById("userName").textContent = userData.nama;
+        document.getElementById("userRole").textContent = userData.role;
+
+        getCurrentUserData((user) => {
+          if (user.role !== "Leader") {
+            document.getElementById("newProjectBtn").style.display = "none";
+          }
+        });
+      });
+    </script> -->
+  </body>
+</html>
