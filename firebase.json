@@ -1,10 +1,14 @@
 {
   "hosting": {
     "public": ".",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      { "source": "/dashboard", "destination": "/pages/dashboard.html" },
+      { "source": "/projects", "destination": "/pages/projects.html" },
+      { "source": "/tasks", "destination": "/pages/tasks.html" },
+      { "source": "/logs", "destination": "/pages/logs.html" },
+      { "source": "/contribution", "destination": "/pages/contribution.html" },
+      { "source": "/login", "destination": "/pages/auth/login.html" }
     ]
   }
 }
