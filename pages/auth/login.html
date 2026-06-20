@@ -159,7 +159,7 @@
             Welcome back to your digital observatory.
           </p>
         </div>
-        <form class="space-y-6" onsubmit="event.preventDefault()">
+        <form class="space-y-6">
           <!-- Email Field -->
           <div class="space-y-2">
             <label
@@ -212,8 +212,9 @@
               <button
                 class="absolute inset-y-0 right-0 pr-3 flex items-center text-on-surface-variant hover:text-on-background"
                 type="button"
+                onclick="togglePassword('password', 'toggle-icon')"
               >
-                <span class="material-symbols-outlined text-lg"
+                <span class="material-symbols-outlined text-lg" id="toggle-icon"
                   >visibility</span
                 >
               </button>
@@ -243,7 +244,7 @@
         <div class="mt-8 pt-6 border-t border-[#4a4455]/10 text-center">
           <p class="text-on-surface-variant text-sm">
             New to TeamSync?
-            <a class="text-primary font-medium hover:underline ml-1" href="#"
+            <a class="text-primary font-medium hover:underline ml-1" href="register.html"
               >Create an account</a
             >
           </p>
@@ -266,6 +267,18 @@
       </div>
     </main>
     <script>
+      function togglePassword(fieldId, iconId) {
+        const field = document.getElementById(fieldId);
+        const icon = document.getElementById(iconId);
+        if (field.type === "password") {
+          field.type = "text";
+          icon.textContent = "visibility_off";
+        } else {
+          field.type = "password";
+          icon.textContent = "visibility";
+        }
+      }
+
       // Micro-interaction: Mouse tracking nebula glow
       document.addEventListener("mousemove", (e) => {
         const glow1 = document.getElementById("glow1");

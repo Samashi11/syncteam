@@ -108,24 +108,93 @@
         background: rgba(49, 53, 63, 0.4);
         backdrop-filter: blur(20px);
       }
+
+      /* ===== Responsive helpers (tidak mengubah style/warna asli, hanya layout) ===== */
+
+      /* Overlay saat sidebar mobile terbuka */
+      #sidebarOverlay {
+        display: none;
+      }
+      #sidebarOverlay.active {
+        display: block;
+      }
+
+      /* Default: sidebar tersembunyi di mobile, tampil sebagai drawer */
+      @media (max-width: 1023px) {
+        #sideNav {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+          width: 16rem; /* tetap w-64 */
+        }
+        #sideNav.open {
+          transform: translateX(0);
+        }
+
+        /* Header & main menyesuaikan karena sidebar tidak lagi push content */
+        #topAppBar {
+          left: 0 !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        #mainContent {
+          margin-left: 0 !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        #mobileMenuBtn {
+          display: inline-flex;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        #mobileMenuBtn {
+          display: none;
+        }
+      }
+
+      /* Sembunyikan search bar penuh di layar sangat kecil agar tidak menabrak ikon kanan */
+      @media (max-width: 480px) {
+        #headerSearchWrap {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body class="font-body selection:bg-primary/30">
+    <!-- Overlay untuk mobile saat sidebar terbuka -->
+    <div
+      id="sidebarOverlay"
+      class="fixed inset-0 bg-black/60 z-30 lg:hidden"
+      onclick="document.getElementById('sideNav').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('active');"
+    ></div>
+
     <!-- SideNavBar (Shared Component) -->
     <aside
+      id="sideNav"
       class="fixed left-0 top-0 h-full z-40 flex flex-col p-6 h-screen w-64 border-r border-[#4a4455]/15 bg-[#181b25]/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
     >
-      <div class="mb-10 px-2">
-        <h1
-          class="text-2xl font-bold bg-gradient-to-br from-[#cebdff] to-[#6f54be] bg-clip-text text-transparent font-headline"
+      <div class="mb-10 px-2 flex items-center justify-between">
+        <div>
+          <h1
+            class="text-2xl font-bold bg-gradient-to-br from-[#cebdff] to-[#6f54be] bg-clip-text text-transparent font-headline"
+          >
+            TeamSync
+          </h1>
+          <p
+            class="text-[0.6875rem] text-on-surface-variant font-label tracking-widest uppercase mt-1"
+          >
+            The Celestial Workspace
+          </p>
+        </div>
+        <!-- Tombol tutup sidebar (mobile only) -->
+        <button
+          id="closeSidebarBtn"
+          class="lg:hidden text-on-surface-variant hover:text-white"
+          onclick="document.getElementById('sideNav').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('active');"
         >
-          TeamSync
-        </h1>
-        <p
-          class="text-[0.6875rem] text-on-surface-variant font-label tracking-widest uppercase mt-1"
-        >
-          The Celestial Workspace
-        </p>
+          <span class="material-symbols-outlined" data-icon="close">close</span>
+        </button>
       </div>
       <nav
         class="flex-1 flex flex-col gap-2 font-['Space_Grotesk'] text-sm tracking-wide"
@@ -189,10 +258,19 @@
     </aside>
     <!-- TopAppBar (Shared Component) -->
     <header
-      class="fixed top-0 right-0 left-64 h-20 flex justify-between items-center px-8 z-30 bg-[#0a0e17]/40 backdrop-blur-md font-['Space_Grotesk'] font-medium"
+      id="topAppBar"
+      class="fixed top-0 right-0 left-64 h-20 flex justify-between items-center px-8 z-30 bg-[#0a0e17]/40 backdrop-blur-md font-['Space_Grotesk'] font-medium gap-4"
     >
-      <div class="flex items-center gap-6 flex-1">
-        <div class="relative w-full max-w-md">
+      <div class="flex items-center gap-4 flex-1 min-w-0">
+        <!-- Tombol hamburger untuk membuka sidebar di mobile -->
+        <button
+          id="mobileMenuBtn"
+          class="hidden text-[#ccc3d8] hover:text-white transition-colors flex-shrink-0"
+          onclick="document.getElementById('sideNav').classList.add('open'); document.getElementById('sidebarOverlay').classList.add('active');"
+        >
+          <span class="material-symbols-outlined" data-icon="menu">menu</span>
+        </button>
+        <div id="headerSearchWrap" class="relative w-full max-w-md min-w-0">
           <span
             class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm"
             data-icon="search"
@@ -205,7 +283,7 @@
           />
         </div>
       </div>
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-4 sm:gap-6 flex-shrink-0">
         <button
           class="text-[#ccc3d8] hover:text-white transition-colors relative"
         >
@@ -216,13 +294,13 @@
             class="absolute top-0 right-0 w-2 h-2 bg-secondary rounded-full"
           ></span>
         </button>
-        <button class="text-[#ccc3d8] hover:text-white transition-colors">
+        <button class="hidden sm:inline-flex text-[#ccc3d8] hover:text-white transition-colors">
           <span class="material-symbols-outlined" data-icon="settings"
             >settings</span
           >
         </button>
         <div
-          class="h-10 w-10 rounded-full overflow-hidden border border-outline-variant/30"
+          class="h-10 w-10 rounded-full overflow-hidden border border-outline-variant/30 flex-shrink-0"
         >
           <img
             alt="User Profile"
@@ -233,10 +311,10 @@
       </div>
     </header>
     <!-- Main Content Canvas -->
-    <main class="ml-64 pt-28 px-12 pb-12 min-h-screen">
+    <main id="mainContent" class="ml-64 pt-28 px-12 pb-12 min-h-screen">
       <header class="mb-12">
         <h2
-          class="font-headline text-4xl font-bold tracking-tight text-on-surface mb-2"
+          class="font-headline text-3xl sm:text-4xl font-bold tracking-tight text-on-surface mb-2"
         >
           Activity Log
         </h2>
@@ -257,7 +335,7 @@
             <div class="mb-10 relative z-10">
               <div class="flex items-center gap-4 mb-0">
                 <div
-                  class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center border border-primary/20 nebula-glow"
+                  class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center border border-primary/20 nebula-glow flex-shrink-0"
                 >
                   <span
                     class="material-symbols-outlined text-primary text-xl"
@@ -279,7 +357,7 @@
             >
               <div class="flex items-center gap-4 mb-8">
                 <div
-                  class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center border border-outline-variant/20"
+                  class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center border border-outline-variant/20 flex-shrink-0"
                 >
                   <span
                     class="material-symbols-outlined text-on-surface-variant text-xl"

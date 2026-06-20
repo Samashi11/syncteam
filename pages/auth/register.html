@@ -181,7 +181,7 @@
         >
         <a
           class="font-body text-label-sm text-primary font-bold active:scale-95 transition-transform"
-          href="#"
+          href="login.html"
           >Login</a
         >
       </div>
@@ -204,7 +204,7 @@
             Join your team in the celestial workspace.
           </p>
         </div>
-        <form class="space-y-6" onsubmit="event.preventDefault()">
+        <form id="registerForm" class="space-y-6">
           <!-- Full Name -->
           <div class="space-y-2">
             <label
@@ -219,9 +219,11 @@
                 >person</span
               >
               <input
+                id="nama-field"
                 class="w-full bg-transparent border-none py-4 pl-12 pr-4 focus:ring-0 text-on-surface placeholder:text-outline/50 font-body"
                 placeholder="John Doe"
                 type="text"
+                required
               />
             </div>
           </div>
@@ -239,9 +241,11 @@
                 >mail</span
               >
               <input
+                id="email-field"
                 class="w-full bg-transparent border-none py-4 pl-12 pr-4 focus:ring-0 text-on-surface placeholder:text-outline/50 font-body"
                 placeholder="name@company.com"
                 type="email"
+                required
               />
             </div>
           </div>
@@ -265,6 +269,7 @@
                   id="password-field"
                   placeholder="••••••••"
                   type="password"
+                  required
                 />
                 <button
                   class="absolute right-4 text-outline hover:text-on-surface transition-colors"
@@ -291,16 +296,20 @@
                   >lock</span
                 >
                 <input
+                  id="confirm-password-field"
                   class="w-full bg-transparent border-none py-4 pl-12 pr-4 focus:ring-0 text-on-surface placeholder:text-outline/50 font-body"
                   placeholder="••••••••"
                   type="password"
+                  required
                 />
               </div>
             </div>
           </div>
           <div class="pt-4">
             <button
+              id="registerSubmitBtn"
               class="primary-gradient-btn w-full py-4 rounded-lg text-on-primary font-headline font-bold text-lg active:scale-[0.98] transition-transform"
+              type="submit"
             >
               Daftar
             </button>
@@ -309,7 +318,7 @@
         <div class="mt-8 text-center">
           <p class="font-body text-on-surface-variant text-sm">
             Sudah punya akun?
-            <a class="text-primary font-bold hover:underline ml-1" href="#"
+            <a class="text-primary font-bold hover:underline ml-1" href="login.html"
               >Masuk</a
             >
           </p>
@@ -379,6 +388,65 @@
           const speed = (index + 1) * 20;
           glow.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
         });
+      });
+    </script>
+    <script type="module">
+      import { register } from "../../js/auth.js";
+
+      const form = document.getElementById("registerForm");
+      const submitBtn = document.getElementById("registerSubmitBtn");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const nama = document.getElementById("nama-field").value.trim();
+        const email = document.getElementById("email-field").value.trim();
+        const password = document.getElementById("password-field").value;
+        const confirmPassword = document.getElementById(
+          "confirm-password-field",
+        ).value;
+
+        if (!nama || !email || !password || !confirmPassword) {
+          alert("Semua field wajib diisi");
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          alert("Konfirmasi password tidak cocok");
+          return;
+        }
+
+        if (password.length < 6) {
+          alert("Password minimal 6 karakter");
+          return;
+        }
+
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Mendaftarkan...";
+
+        try {
+          await register(nama, email, password);
+
+          alert("Akun berhasil dibuat! Silakan login.");
+          window.location.href = "login.html";
+        } catch (err) {
+          console.error(err);
+
+          let pesan = "Pendaftaran gagal. Silakan coba lagi.";
+          if (err.code === "auth/email-already-in-use") {
+            pesan = "Email sudah terdaftar. Silakan login.";
+          } else if (err.code === "auth/invalid-email") {
+            pesan = "Format email tidak valid.";
+          } else if (err.code === "auth/weak-password") {
+            pesan = "Password terlalu lemah (minimal 6 karakter).";
+          }
+
+          alert(pesan);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
       });
     </script>
   </body>

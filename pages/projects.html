@@ -137,22 +137,91 @@
           opacity: 1;
         }
       }
+
+      /* ===== Responsive helpers (tidak mengubah style/warna asli, hanya layout) ===== */
+
+      /* Overlay saat sidebar mobile terbuka */
+      #sidebarOverlay {
+        display: none;
+      }
+      #sidebarOverlay.active {
+        display: block;
+      }
+
+      /* Default: sidebar tersembunyi di mobile, tampil sebagai drawer */
+      @media (max-width: 1023px) {
+        #sideNav {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+          width: 16rem; /* tetap w-64 */
+        }
+        #sideNav.open {
+          transform: translateX(0);
+        }
+
+        /* Header & main menyesuaikan karena sidebar tidak lagi push content */
+        #topAppBar {
+          left: 0 !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        #mainContent {
+          margin-left: 0 !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        #mobileMenuBtn {
+          display: inline-flex;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        #mobileMenuBtn {
+          display: none;
+        }
+      }
+
+      /* Sembunyikan search bar penuh di layar sangat kecil agar tidak menabrak ikon kanan */
+      @media (max-width: 480px) {
+        #headerSearchWrap {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body class="font-body selection:bg-primary/30">
+    <!-- Overlay untuk mobile saat sidebar terbuka -->
+    <div
+      id="sidebarOverlay"
+      class="fixed inset-0 bg-black/60 z-30 lg:hidden"
+      onclick="document.getElementById('sideNav').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('active');"
+    ></div>
+
     <!-- Sidebar Navigation Shell -->
     <aside
+      id="sideNav"
       class="fixed left-0 top-0 h-full z-40 flex flex-col p-6 bg-[#181b25]/60 backdrop-blur-xl h-screen w-64 border-r border-[#4a4455]/15 shadow-[0_20px_40px_rgba(0,0,0,0.4)] font-['Space_Grotesk'] text-sm tracking-wide"
     >
-      <div class="mb-10 flex flex-col gap-1">
-        <span
-          class="text-2xl font-bold bg-gradient-to-br from-[#cebdff] to-[#6f54be] bg-clip-text text-transparent"
-          >TeamSync</span
+      <div class="mb-10 flex items-center justify-between gap-1">
+        <div class="flex flex-col gap-1">
+          <span
+            class="text-2xl font-bold bg-gradient-to-br from-[#cebdff] to-[#6f54be] bg-clip-text text-transparent"
+            >TeamSync</span
+          >
+          <span
+            class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60"
+            >The Celestial Workspace</span
+          >
+        </div>
+        <!-- Tombol tutup sidebar (mobile only) -->
+        <button
+          id="closeSidebarBtn"
+          class="lg:hidden text-on-surface-variant hover:text-white"
+          onclick="document.getElementById('sideNav').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('active');"
         >
-        <span
-          class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60"
-          >The Celestial Workspace</span
-        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
       </div>
       <nav class="flex flex-col gap-2 flex-grow">
         <a
@@ -203,10 +272,19 @@
     </aside>
     <!-- Top App Bar -->
     <header
-      class="fixed top-0 right-0 left-64 h-20 flex justify-between items-center px-8 z-30 bg-[#0a0e17]/40 backdrop-blur-md font-['Space_Grotesk'] font-medium"
+      id="topAppBar"
+      class="fixed top-0 right-0 left-64 h-20 flex justify-between items-center px-8 z-30 bg-[#0a0e17]/40 backdrop-blur-md font-['Space_Grotesk'] font-medium gap-4"
     >
-      <div class="flex items-center gap-6 flex-1">
-        <div class="relative w-full max-w-md">
+      <div class="flex items-center gap-4 flex-1 min-w-0">
+        <!-- Tombol hamburger untuk membuka sidebar di mobile -->
+        <button
+          id="mobileMenuBtn"
+          class="hidden text-on-surface-variant hover:text-white transition-colors flex-shrink-0"
+          onclick="document.getElementById('sideNav').classList.add('open'); document.getElementById('sidebarOverlay').classList.add('active');"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div id="headerSearchWrap" class="relative w-full max-w-md min-w-0">
           <span
             class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl"
             >search</span
@@ -218,7 +296,7 @@
           />
         </div>
       </div>
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-4 sm:gap-6 flex-shrink-0">
         <button
           class="relative text-on-surface-variant hover:text-white transition-colors"
         >
@@ -228,12 +306,12 @@
           ></span>
         </button>
         <button
-          class="text-on-surface-variant hover:text-white transition-colors"
+          class="hidden sm:inline-flex text-on-surface-variant hover:text-white transition-colors"
         >
           <span class="material-symbols-outlined">settings</span>
         </button>
         <div
-          class="h-10 w-10 rounded-full overflow-hidden border border-outline-variant/30"
+          class="h-10 w-10 rounded-full overflow-hidden border border-outline-variant/30 flex-shrink-0"
         >
           <img
             alt="User Profile"
@@ -245,16 +323,16 @@
       </div>
     </header>
     <!-- Main Content Canvas -->
-    <main class="ml-64 pt-28 px-12 pb-12 min-h-screen">
+    <main id="mainContent" class="ml-64 pt-28 px-12 pb-12 min-h-screen">
       <!-- Background Ambient Effect -->
       <div
         class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden"
       ></div>
       <!-- Header Section -->
-      <div class="flex justify-between items-end mb-12">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6 mb-12">
         <div>
           <h1
-            class="text-4xl font-headline font-bold text-on-surface tracking-tight mb-2"
+            class="text-3xl sm:text-4xl font-headline font-bold text-on-surface tracking-tight mb-2"
           >
             Projects
           </h1>
