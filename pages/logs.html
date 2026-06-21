@@ -166,7 +166,10 @@
     <div
       id="sidebarOverlay"
       class="fixed inset-0 bg-black/60 z-30 lg:hidden"
-      onclick="document.getElementById('sideNav').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('active');"
+      onclick="
+        document.getElementById('sideNav').classList.remove('open');
+        document.getElementById('sidebarOverlay').classList.remove('active');
+      "
     ></div>
 
     <!-- SideNavBar (Shared Component) -->
@@ -191,7 +194,12 @@
         <button
           id="closeSidebarBtn"
           class="lg:hidden text-on-surface-variant hover:text-white"
-          onclick="document.getElementById('sideNav').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('active');"
+          onclick="
+            document.getElementById('sideNav').classList.remove('open');
+            document
+              .getElementById('sidebarOverlay')
+              .classList.remove('active');
+          "
         >
           <span class="material-symbols-outlined" data-icon="close">close</span>
         </button>
@@ -266,7 +274,10 @@
         <button
           id="mobileMenuBtn"
           class="hidden text-[#ccc3d8] hover:text-white transition-colors flex-shrink-0"
-          onclick="document.getElementById('sideNav').classList.add('open'); document.getElementById('sidebarOverlay').classList.add('active');"
+          onclick="
+            document.getElementById('sideNav').classList.add('open');
+            document.getElementById('sidebarOverlay').classList.add('active');
+          "
         >
           <span class="material-symbols-outlined" data-icon="menu">menu</span>
         </button>
@@ -294,7 +305,9 @@
             class="absolute top-0 right-0 w-2 h-2 bg-secondary rounded-full"
           ></span>
         </button>
-        <button class="hidden sm:inline-flex text-[#ccc3d8] hover:text-white transition-colors">
+        <button
+          class="hidden sm:inline-flex text-[#ccc3d8] hover:text-white transition-colors"
+        >
           <span class="material-symbols-outlined" data-icon="settings"
             >settings</span
           >
@@ -345,8 +358,7 @@
                 </div>
                 <h3
                   class="font-headline text-lg font-medium text-primary-fixed-dim"
-                >
-                </h3>
+                ></h3>
               </div>
               <!-- <div class="flex flex-col gap-8 ml-12"> -->
               <div id="logList" class="flex flex-col gap-8 ml-12"></div>
@@ -425,7 +437,10 @@
                   >
                     Total Actions Today
                   </p>
-                  <p class="text-3xl font-bold font-headline text-primary">
+                  <p
+                    id="totalToday"
+                    class="text-3xl font-bold font-headline text-primary"
+                  >
                     142
                   </p>
                 </div>
@@ -447,11 +462,15 @@
               </div>
               <div class="space-y-4 pt-4 border-t border-outline-variant/10">
                 <div class="flex justify-between items-center text-sm">
-                  <span class="text-on-surface-variant">Tasks Completed</span>
+                  <span id="completedToday" class="text-on-surface-variant"
+                    >Tasks Completed</span
+                  >
                   <span class="font-medium text-on-surface">18</span>
                 </div>
                 <div class="flex justify-between items-center text-sm">
-                  <span class="text-on-surface-variant">Tasks Created</span>
+                  <span id="createdToday" class="text-on-surface-variant"
+                    >Tasks Created</span
+                  >
                   <span class="font-medium text-on-surface">54</span>
                 </div>
               </div>

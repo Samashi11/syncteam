@@ -240,14 +240,13 @@ function isToday(timestamp) {
 }
 
 function updateStats(total, completed, created) {
-  document.querySelector(".text-3xl.font-bold").textContent = total;
+  const totalEl = document.getElementById("totalToday");
+  const completedEl = document.getElementById("completedToday");
+  const createdEl = document.getElementById("createdToday");
 
-  const stats = document.querySelectorAll(".space-y-4.pt-4 span.font-medium");
-
-  if (stats.length >= 2) {
-    stats[0].textContent = completed;
-    stats[1].textContent = created;
-  }
+  if (totalEl) totalEl.textContent = total;
+  if (completedEl) completedEl.textContent = completed;
+  if (createdEl) createdEl.textContent = created;
 }
 
 async function getTopUsers(logs) {

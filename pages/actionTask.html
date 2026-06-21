@@ -130,10 +130,13 @@
       }
     </style>
   </head>
-  <body class="bg-surface-container-lowest font-body text-on-surface min-h-screen">
-
+  <body
+    class="bg-surface-container-lowest font-body text-on-surface min-h-screen"
+  >
     <!-- TopAppBar -->
-    <header class="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex justify-between items-center px-4 md:px-6 h-16">
+    <header
+      class="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex justify-between items-center px-4 md:px-6 h-16"
+    >
       <div class="flex items-center gap-3 md:gap-8">
         <!-- Hamburger button (mobile only) -->
         <button
@@ -144,10 +147,17 @@
           <span class="material-symbols-outlined">menu</span>
         </button>
 
-        <span class="text-2xl font-bold bg-gradient-to-br from-violet-300 to-violet-600 bg-clip-text text-transparent font-headline tracking-tight">TeamSync</span>
+        <span
+          class="text-2xl font-bold bg-gradient-to-br from-violet-300 to-violet-600 bg-clip-text text-transparent font-headline tracking-tight"
+          >TeamSync</span
+        >
 
-        <div class="hidden md:flex items-center bg-white/5 px-4 py-1.5 rounded-full group hover:bg-white/10 transition-colors">
-          <span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+        <div
+          class="hidden md:flex items-center bg-white/5 px-4 py-1.5 rounded-full group hover:bg-white/10 transition-colors"
+        >
+          <span class="material-symbols-outlined text-slate-400 text-sm"
+            >search</span
+          >
           <input
             class="bg-transparent border-none focus:ring-0 text-sm text-on-surface placeholder:text-slate-500 w-64 ml-2"
             placeholder="Search parameters..."
@@ -158,20 +168,28 @@
 
       <div class="flex items-center gap-2 md:gap-4">
         <!-- Mobile search icon -->
-        <button class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors text-slate-400">
+        <button
+          class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors text-slate-400"
+        >
           <span class="material-symbols-outlined">search</span>
         </button>
 
-        <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors text-slate-400">
+        <button
+          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors text-slate-400"
+        >
           <span class="material-symbols-outlined">notifications</span>
         </button>
 
-        <div class="flex items-center gap-3 pl-3 md:pl-4 border-l border-white/10">
+        <div
+          class="flex items-center gap-3 pl-3 md:pl-4 border-l border-white/10"
+        >
           <div class="text-right hidden sm:block">
             <p class="text-xs font-semibold text-violet-200">Alex Chen</p>
             <p class="text-[10px] text-slate-500">Lead Architect</p>
           </div>
-          <span class="material-symbols-outlined text-violet-400 text-3xl">account_circle</span>
+          <span class="material-symbols-outlined text-violet-400 text-3xl"
+            >account_circle</span
+          >
         </div>
       </div>
     </header>
@@ -188,31 +206,69 @@
       class="fixed left-0 top-0 h-screen w-64 z-40 bg-slate-900/60 backdrop-blur-2xl shadow-[10px_0_30px_rgba(0,0,0,0.3)] flex flex-col py-20 px-4 space-y-2"
     >
       <div class="mb-8 px-4">
-        <p class="text-violet-400 font-headline font-bold text-lg tracking-wider">Project Nova</p>
-        <p class="text-slate-500 text-[10px] uppercase tracking-widest">Engineering A1</p>
+        <p
+          class="text-violet-400 font-headline font-bold text-lg tracking-wider"
+        >
+          Project Nova
+        </p>
+        <p class="text-slate-500 text-[10px] uppercase tracking-widest">
+          Engineering A1
+        </p>
       </div>
-      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group" href="#">
-        <span class="material-symbols-outlined group-active:scale-95 duration-200">space_dashboard</span>
+      <a
+        class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group"
+        href="./dashboard.html"
+      >
+        <span
+          class="material-symbols-outlined group-active:scale-95 duration-200"
+          >space_dashboard</span
+        >
         <span class="text-sm font-['Space_Grotesk']">Dashboard</span>
       </a>
-      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group" href="#">
-        <span class="material-symbols-outlined group-active:scale-95 duration-200">folder</span>
+      <a
+        class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group"
+        href="./projects.html"
+      >
+        <span
+          class="material-symbols-outlined group-active:scale-95 duration-200"
+          >folder</span
+        >
         <span class="text-sm font-['Space_Grotesk']">Projects</span>
       </a>
-      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-violet-300 border-r-2 border-violet-500 bg-violet-500/10 group" href="#">
-        <span class="material-symbols-outlined group-active:scale-95 duration-200">rocket_launch</span>
-        <span class="text-sm font-['Space_Grotesk']">Active Tasks</span>
+      <a
+        class="flex items-center gap-3 px-4 py-3 rounded-lg text-violet-300 border-r-2 border-violet-500 bg-violet-500/10 group"
+        href="./tasks.html"
+      >
+        <span
+          class="material-symbols-outlined group-active:scale-95 duration-200"
+          >rocket_launch</span
+        >
+        <span class="text-sm font-['Space_Grotesk']">Tasks</span>
       </a>
-      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group" href="#">
-        <span class="material-symbols-outlined group-active:scale-95 duration-200">history_edu</span>
+      <a
+        class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group"
+        href="./activityLog.html"
+      >
+        <span
+          class="material-symbols-outlined group-active:scale-95 duration-200"
+          >history_edu</span
+        >
         <span class="text-sm font-['Space_Grotesk']">Activity Log</span>
       </a>
-      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group" href="#">
-        <span class="material-symbols-outlined group-active:scale-95 duration-200">query_stats</span>
+      <a
+        class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group"
+        href="./contribution.html"
+      >
+        <span
+          class="material-symbols-outlined group-active:scale-95 duration-200"
+          >query_stats</span
+        >
         <span class="text-sm font-['Space_Grotesk']">Contribution</span>
       </a>
       <div class="pt-10">
-        <button class="w-full py-3 bg-gradient-to-r from-primary-container to-primary text-on-primary font-bold rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-primary-container/20">
+        <button
+          class="w-full py-3 bg-gradient-to-r from-primary-container to-primary text-on-primary font-bold rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-primary-container/20"
+        >
           <span class="material-symbols-outlined text-lg">add</span>
           <span class="font-headline tracking-tight">New Task</span>
         </button>
@@ -220,15 +276,25 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="md:pl-64 pt-16 min-h-screen relative flex items-center justify-center overflow-hidden">
+    <main
+      class="md:pl-64 pt-16 min-h-screen relative flex items-center justify-center overflow-hidden"
+    >
       <!-- Ambient Decor -->
-      <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-violet-600/10 blur-[120px] rounded-full -z-10"></div>
-      <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary/5 blur-[80px] rounded-full -z-10"></div>
+      <div
+        class="absolute top-1/4 right-1/4 w-96 h-96 bg-violet-600/10 blur-[120px] rounded-full -z-10"
+      ></div>
+      <div
+        class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary/5 blur-[80px] rounded-full -z-10"
+      ></div>
 
       <section class="max-w-3xl w-full px-4 md:px-6 py-8 md:py-12">
-        <div class="glass-panel nebula-glow rounded-3xl p-6 md:p-8 lg:p-12 border border-outline-variant/10">
+        <div
+          class="glass-panel nebula-glow rounded-3xl p-6 md:p-8 lg:p-12 border border-outline-variant/10"
+        >
           <header class="mb-8 md:mb-10">
-            <h1 class="text-3xl md:text-4xl font-headline font-bold text-on-surface tracking-tight mb-2">
+            <h1
+              class="text-3xl md:text-4xl font-headline font-bold text-on-surface tracking-tight mb-2"
+            >
               Create New Task
             </h1>
             <p class="text-on-surface-variant/80 text-sm">
@@ -239,7 +305,10 @@
           <form class="space-y-8" id="taskForm">
             <!-- Task Title -->
             <div class="relative">
-              <label class="block text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Primary Objective</label>
+              <label
+                class="block text-[10px] uppercase tracking-widest text-primary font-bold mb-2"
+                >Primary Objective</label
+              >
               <input
                 class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline-variant/30 py-4 text-xl md:text-2xl font-headline text-on-surface placeholder:text-on-surface-variant/30 transition-all focus:border-primary"
                 placeholder="Mission title..."
@@ -250,7 +319,10 @@
 
             <!-- Description -->
             <div>
-              <label class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-3">Briefing Details</label>
+              <label
+                class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-3"
+                >Briefing Details</label
+              >
               <textarea
                 class="w-full bg-surface-container-lowest/50 rounded-xl p-4 border border-outline-variant/10 text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-primary/30 transition-all"
                 placeholder="Outline the scope of work, technical requirements, and expected outcomes..."
@@ -262,7 +334,10 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               <!-- Assign To -->
               <div class="space-y-4">
-                <label class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Delegate To</label>
+                <label
+                  class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
+                  >Delegate To</label
+                >
                 <div id="userList" class="grid grid-cols-2 gap-2">
                   <!-- User buttons will be injected here by JavaScript -->
                 </div>
@@ -271,9 +346,15 @@
               <!-- Date & Status -->
               <div class="space-y-6">
                 <div>
-                  <label class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2">Orbital Deadline</label>
+                  <label
+                    class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2"
+                    >Orbital Deadline</label
+                  >
                   <div class="relative">
-                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg">event</span>
+                    <span
+                      class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg"
+                      >event</span
+                    >
                     <input
                       class="w-full bg-surface-container-lowest/50 border border-outline-variant/10 rounded-xl pl-11 pr-4 py-2.5 text-sm text-on-surface"
                       type="date"
@@ -282,9 +363,15 @@
                   </div>
                 </div>
                 <div>
-                  <label class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2">Initial Status</label>
+                  <label
+                    class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2"
+                    >Initial Status</label
+                  >
                   <div class="relative">
-                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg">radio_button_checked</span>
+                    <span
+                      class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg"
+                      >radio_button_checked</span
+                    >
                     <select
                       class="w-full bg-surface-container-lowest/50 border border-outline-variant/10 rounded-xl pl-11 pr-4 py-2.5 text-sm text-on-surface appearance-none"
                       id="taskStatus"
@@ -293,14 +380,19 @@
                       <option value="inprogress">In Progress</option>
                       <option value="done">Done</option>
                     </select>
-                    <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg pointer-events-none">expand_more</span>
+                    <span
+                      class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg pointer-events-none"
+                      >expand_more</span
+                    >
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Actions -->
-            <div class="pt-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+            <div
+              class="pt-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-4"
+            >
               <button
                 class="text-sm font-bold text-on-surface-variant hover:text-on-surface transition-colors"
                 type="button"
@@ -318,25 +410,37 @@
           </form>
         </div>
 
-        <div class="mt-8 flex flex-wrap justify-center gap-6 md:gap-12 text-on-surface-variant/40">
+        <div
+          class="mt-8 flex flex-wrap justify-center gap-6 md:gap-12 text-on-surface-variant/40"
+        >
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-sm">verified_user</span>
-            <span class="text-[10px] uppercase tracking-tighter">Secure Protocol Alpha</span>
+            <span class="text-[10px] uppercase tracking-tighter"
+              >Secure Protocol Alpha</span
+            >
           </div>
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-sm">cloud_sync</span>
-            <span class="text-[10px] uppercase tracking-tighter">Real-time Node Sync</span>
+            <span class="text-[10px] uppercase tracking-tighter"
+              >Real-time Node Sync</span
+            >
           </div>
         </div>
       </section>
     </main>
 
     <!-- Contextual Focus Pulse (Ambient Decor) -->
-    <div class="fixed bottom-6 right-6 md:bottom-12 md:right-12 flex flex-col items-end gap-2 group pointer-events-none opacity-50 hover:opacity-100 transition-opacity">
-      <p class="text-[10px] font-headline font-medium text-primary tracking-widest bg-surface-container-high/80 backdrop-blur-md px-3 py-1 rounded-full border border-primary/20">
+    <div
+      class="fixed bottom-6 right-6 md:bottom-12 md:right-12 flex flex-col items-end gap-2 group pointer-events-none opacity-50 hover:opacity-100 transition-opacity"
+    >
+      <p
+        class="text-[10px] font-headline font-medium text-primary tracking-widest bg-surface-container-high/80 backdrop-blur-md px-3 py-1 rounded-full border border-primary/20"
+      >
         CURRENT TASK FOCUS
       </p>
-      <div class="w-4 h-4 bg-primary rounded-full animate-pulse shadow-[0_0_15px_#cebdff]"></div>
+      <div
+        class="w-4 h-4 bg-primary rounded-full animate-pulse shadow-[0_0_15px_#cebdff]"
+      ></div>
     </div>
 
     <script type="module" src="../js/app.js"></script>
@@ -454,35 +558,35 @@
 
     <!-- Responsive Sidebar Toggle Script -->
     <script>
-      const menuToggle = document.getElementById('menuToggle');
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('sidebarOverlay');
+      const menuToggle = document.getElementById("menuToggle");
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("sidebarOverlay");
 
       function openSidebar() {
-        sidebar.classList.add('open');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        sidebar.classList.add("open");
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden";
       }
 
       function closeSidebar() {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
+        sidebar.classList.remove("open");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "";
       }
 
-      menuToggle.addEventListener('click', () => {
-        if (sidebar.classList.contains('open')) {
+      menuToggle.addEventListener("click", () => {
+        if (sidebar.classList.contains("open")) {
           closeSidebar();
         } else {
           openSidebar();
         }
       });
 
-      overlay.addEventListener('click', closeSidebar);
+      overlay.addEventListener("click", closeSidebar);
 
       // Close sidebar on nav link click (mobile)
-      sidebar.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
+      sidebar.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
           if (window.innerWidth < 768) closeSidebar();
         });
       });
