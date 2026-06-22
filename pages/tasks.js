@@ -76,6 +76,9 @@ listenAuth(async (user) => {
     console.error("❌ Gagal ambil data user:", err);
   }
 
+  document.getElementById("newProjectBtn")?.addEventListener("click", () => {
+    window.location.href = "/pages/createProject.html";
+  });
   // load tasks
   await loadTasks(projectId);
 });

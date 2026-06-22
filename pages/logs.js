@@ -34,6 +34,10 @@ listenAuth(async (user) => {
     document.getElementById("newProjectBtn")?.classList.add("hidden");
   }
 
+  document.getElementById("newProjectBtn")?.addEventListener("click", () => {
+    window.location.href = "/pages/createProject.html";
+  });
+
   await loadLogs();
 });
 

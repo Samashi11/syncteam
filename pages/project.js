@@ -25,6 +25,10 @@ listenAuth(async (user) => {
     document.getElementById("newProjectBtns").style.display = "none";
   }
 
+  document.getElementById("newProjectBtn")?.addEventListener("click", () => {
+    window.location.href = "/pages/createProject.html";
+  });
+
   const projects = await getProjects();
   renderProjects(projects);
 });

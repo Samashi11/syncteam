@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
       todayEl.textContent = getTodayFormatted();
     }
 
+    document.getElementById("newProjectBtn")?.addEventListener("click", () => {
+      window.location.href = "/pages/createProject.html";
+    });
+
     // 🔥 Load data
     await loadActivityLogs();
 

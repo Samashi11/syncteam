@@ -170,23 +170,23 @@
         </p>
       </div>
       <nav class="flex-1 space-y-2">
-        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="#">
+        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="dashboard.html">
           <span class="material-symbols-outlined">dashboard</span>
           <span>Dashboard</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#cebdff] bg-[#31353f]/40 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.1)] transition-all duration-300" href="#">
+        <a class="flex items-center gap-3 px-4 py-3 text-[#cebdff] bg-[#31353f]/40 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.1)] transition-all duration-300" href="projects.html">
           <span class="material-symbols-outlined">folder_shared</span>
           <span>Projects</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="#">
+        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="tasks.html">
           <span class="material-symbols-outlined">assignment</span>
           <span>Tasks</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="#">
+        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="logs.html">
           <span class="material-symbols-outlined">history</span>
           <span>Activity Log</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="#">
+        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="contribution.html">
           <span class="material-symbols-outlined">stars</span>
           <span>Contribution</span>
         </a>
@@ -263,31 +263,31 @@
 
         <!-- Focus Form Container -->
         <div class="glass-panel nebula-glow rounded-3xl p-6 md:p-8 lg:p-10 border border-outline-variant/10">
-          <form class="space-y-10">
+          <form id="createProjectForm" class="space-y-10">
 
             <!-- Section: Core Identity -->
             <div class="space-y-6">
               <div class="group">
                 <label class="block text-[10px] uppercase tracking-widest text-primary mb-2 font-headline font-bold">Project Name</label>
-                <input
+                <input id="projectName"
                   class="w-full bg-transparent border-b-2 border-outline-variant/30 py-4 text-xl md:text-2xl font-headline font-medium text-on-surface input-glow-focus transition-all placeholder:text-on-surface-variant/30"
-                  placeholder="Enter a name for the mission..."
+                  placeholder="Enter a name for the project..."
                   type="text"
                 />
               </div>
               <div class="group">
-                <label class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 font-headline font-bold">Mission Objective</label>
-                <textarea
-                  class="w-full bg-surface-container-lowest/50 rounded-xl border-none p-4 text-on-surface focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-on-surface-variant/30 resize-none"
-                  placeholder="Describe the project goal, scope, and desired outcomes..."
-                  rows="3"
-                ></textarea>
+                <label class="block text-[10px] uppercase tracking-widest text-primary mb-2 font-headline font-bold">Project Course</label>
+                <input id="projectCourse"
+                  class="w-full bg-transparent border-b-2 border-outline-variant/30 py-4 text-xl md:text-2xl font-headline font-medium text-on-surface input-glow-focus transition-all placeholder:text-on-surface-variant/30"
+                  placeholder="Enter the course name..."
+                  type="text"
+                />
               </div>
             </div>
 
             <!-- Section: Classification & Timeline -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div class="space-y-4">
+              <!-- <div class="space-y-4">
                 <label class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-headline font-bold">Project Category</label>
                 <div class="relative">
                   <select class="w-full bg-surface-container-lowest/50 rounded-xl border-none p-4 text-on-surface focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
@@ -298,68 +298,20 @@
                   </select>
                   <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
                 </div>
-              </div>
+              </div> -->
               <div class="space-y-4">
                 <label class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-headline font-bold">Launch Timeline</label>
                 <div class="flex flex-col sm:flex-row items-center gap-3 bg-surface-container-lowest/50 rounded-xl p-2">
                   <input class="bg-transparent border-none text-xs text-on-surface focus:ring-0 p-2 w-full cursor-pointer" type="date" />
                   <span class="material-symbols-outlined text-outline-variant hidden sm:block">arrow_forward</span>
                   <span class="material-symbols-outlined text-outline-variant sm:hidden">arrow_downward</span>
-                  <input class="bg-transparent border-none text-xs text-on-surface focus:ring-0 p-2 w-full cursor-pointer" type="date" />
+                  <input id="projectDeadline" class="bg-transparent border-none text-xs text-on-surface focus:ring-0 p-2 w-full cursor-pointer" type="date" />
                 </div>
               </div>
             </div>
 
             <!-- Section: Team Selection -->
-            <div class="space-y-4">
-              <div class="flex justify-between items-end">
-                <label class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-headline font-bold">Assemble Crew</label>
-                <button class="text-[11px] text-primary hover:underline transition-all" type="button">Invite External</button>
-              </div>
-              <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                <!-- Member 1 -->
-                <div class="member-card flex items-center gap-3 p-3 bg-surface-container-lowest/30 rounded-xl border border-outline-variant/10 hover:border-primary/40 cursor-pointer transition-all member-card-active">
-                  <img
-                    class="w-8 h-8 rounded-full"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK5PkkzLrdNPl8rSV5FFMdkfj5FSsyaFiEf26APuHcNsSw9j8eU4Ahhiv_Os5SkbXF-d98fpyqb9fJwMCiORLLF-nVKN8x3uyaBeZ3Fq8GqKMxVKkt8-eayef01mncmko8f79h2OgxjJCtjWzV2rCTGHquCuxgyvDPhFduh-RVVq2A2mesnmEFufTqAuiQV0mxdNIG950FUuFGOQbFxDpAAtc-2GDNqt7v9A0cbTjsAmWNnFFkI8JpqFzQD-xT8_omxu1E6_mOPSc"
-                  />
-                  <div class="flex-1 min-w-0">
-                    <p class="text-xs font-medium text-on-surface truncate">Sarah J.</p>
-                    <p class="text-[9px] text-on-surface-variant truncate">Full-stack Dev</p>
-                  </div>
-                  <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: &quot;FILL&quot; 1">check_circle</span>
-                </div>
-                <!-- Member 2 -->
-                <div class="member-card flex items-center gap-3 p-3 bg-surface-container-lowest/30 rounded-xl border border-outline-variant/10 hover:border-primary/40 cursor-pointer transition-all">
-                  <img
-                    class="w-8 h-8 rounded-full"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAkwNuoyX1GDE4_QFl391QLTVxa0CvE5sL-kWINE7noMAGArrmTAFTabsSIzDM2T5bv1AWrID5_TkN1Mp9t98Dxj2My-dHgpGlo_Qr3EdkmCE_vTIEB501rE0I9827hvj7UQ6YFqcWEoQTfgppaTJivKdqITYTrhHsKsU6zKwbbGcgutW0eBZMqod-FRM8GMFUwowIxy95ePoaSoHdXIzuyA1yL7SVHSnn-OP3dtpiynisJO61-JLOfJlCOJCoW7BvyUE0A-QfUT8"
-                  />
-                  <div class="flex-1 min-w-0">
-                    <p class="text-xs font-medium text-on-surface truncate">Marcus T.</p>
-                    <p class="text-[9px] text-on-surface-variant truncate">UI Designer</p>
-                  </div>
-                </div>
-                <!-- Member 3 -->
-                <div class="member-card flex items-center gap-3 p-3 bg-surface-container-lowest/30 rounded-xl border border-outline-variant/10 hover:border-primary/40 cursor-pointer transition-all">
-                  <img
-                    class="w-8 h-8 rounded-full"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzDlzASShqoerGBk_8u_oM2OtOD5Fun6lJeVDDkxC7PJDIgQbZuxc6cbwDbCMsk6N1-LlL3vFxLEJqukTsNg6vsXkz6uOZrqhoQcwt55Qk_pKn71LXlJo5ss8UHEiL4dKIVTOj9tbKiDK6h2KsxSDj32PTzB3dK5stPY0l1tS70FmM3d3c8QZlxfjdXd_TJHvGbNbiTJvNlkRfRFRFxHMxxztFLLfykaFyGYI4i6B-uGN9Qq2CbATupWTVdpa5r4Ocb446QPPIbgs"
-                  />
-                  <div class="flex-1 min-w-0">
-                    <p class="text-xs font-medium text-on-surface truncate">Leila K.</p>
-                    <p class="text-[9px] text-on-surface-variant truncate">Research Lead</p>
-                  </div>
-                </div>
-                <!-- Add More -->
-                <div class="member-card flex items-center gap-3 p-3 bg-surface-container-lowest/30 rounded-xl border border-dashed border-outline-variant/40 hover:border-primary/60 cursor-pointer transition-all group">
-                  <div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center">
-                    <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">add</span>
-                  </div>
-                  <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Add More</p>
-                </div>
-              </div>
-            </div>
+            
 
             <!-- Section: Visibility & Meta -->
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-6 border-t border-outline-variant/10">
@@ -408,6 +360,7 @@
       </div>
     </main>
 
+    <script type="module" src="./createProject.js"></script>s
     <!-- Responsive Sidebar Toggle Script -->
     <script>
       const menuToggle = document.getElementById('menuToggle');
