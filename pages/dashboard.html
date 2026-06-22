@@ -127,9 +127,11 @@
     </style>
   </head>
   <body class="font-body text-on-surface overflow-x-hidden">
-
     <!-- Sidebar Overlay (mobile/tablet) -->
-    <div id="sidebarOverlay" class="fixed inset-0 bg-black/50 z-40 lg:hidden"></div>
+    <div
+      id="sidebarOverlay"
+      class="fixed inset-0 bg-black/50 z-40 lg:hidden"
+    ></div>
 
     <!-- SideNavBar (unified — works on all breakpoints) -->
     <aside
@@ -137,30 +139,52 @@
       class="fixed left-0 top-0 h-full z-50 flex flex-col p-6 bg-[#181b25]/60 backdrop-blur-xl w-64 border-r border-[#4a4455]/15 font-['Space_Grotesk'] text-sm tracking-wide shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
     >
       <div class="mb-10 flex flex-col gap-1">
-        <span class="text-2xl font-bold bg-gradient-to-br from-[#cebdff] to-[#6f54be] bg-clip-text text-transparent">TeamSync</span>
-        <span class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60">The Celestial Workspace</span>
+        <span
+          class="text-2xl font-bold bg-gradient-to-br from-[#cebdff] to-[#6f54be] bg-clip-text text-transparent"
+          >TeamSync</span
+        >
+        <span
+          class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60"
+          >The Celestial Workspace</span
+        >
       </div>
       <nav class="flex flex-col gap-2 flex-grow">
         <a
           class="flex items-center gap-3 px-4 py-3 text-[#cebdff] bg-[#31353f]/40 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.1)] transition-all duration-300"
           href="dashboard.html"
         >
-          <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">dashboard</span>
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >dashboard</span
+          >
           <span>Dashboard</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="projects.html">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300"
+          href="projects.html"
+        >
           <span class="material-symbols-outlined">folder_shared</span>
           <span>Projects</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="tasks.html">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300"
+          href="tasks.html"
+        >
           <span class="material-symbols-outlined">assignment</span>
           <span>Tasks</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="logs.html">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300"
+          href="logs.html"
+        >
           <span class="material-symbols-outlined">history</span>
           <span>Activity Log</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300" href="contribution.html">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#ccc3d8] hover:text-[#dfe2ef] hover:bg-[#31353f]/20 transition-all duration-300"
+          href="contribution.html"
+        >
           <span class="material-symbols-outlined">stars</span>
           <span>Contribution</span>
         </a>
@@ -186,7 +210,10 @@
 
         <!-- Search bar -->
         <div class="relative w-full group">
-          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+          <span
+            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors"
+            >search</span
+          >
           <input
             class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-secondary focus:ring-0 rounded-lg pl-12 pr-4 py-2.5 text-sm transition-all"
             placeholder="Search orbit..."
@@ -196,16 +223,26 @@
       </div>
 
       <div class="flex items-center gap-3 md:gap-6 ml-3">
-        <button class="relative text-on-surface-variant hover:text-white transition-colors">
+        <button
+          class="relative text-on-surface-variant hover:text-white transition-colors"
+        >
           <span class="material-symbols-outlined">notifications</span>
-          <span class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full"></span>
+          <span
+            class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full"
+          ></span>
         </button>
-        <button class="hidden sm:block text-on-surface-variant hover:text-white transition-colors">
+        <button
+          class="hidden sm:block text-on-surface-variant hover:text-white transition-colors"
+        >
           <span class="material-symbols-outlined">settings</span>
         </button>
-        <div class="flex items-center gap-2 md:gap-3 pl-3 md:pl-4 border-l border-outline-variant/20">
+        <div
+          class="flex items-center gap-2 md:gap-3 pl-3 md:pl-4 border-l border-outline-variant/20"
+        >
           <div class="text-right hidden sm:block">
-            <p id="userName" class="text-sm font-bold text-on-surface">Loading...</p>
+            <p id="userName" class="text-sm font-bold text-on-surface">
+              Loading...
+            </p>
             <p id="userRole" class="text-[10px] text-on-surface-variant">...</p>
           </div>
           <img
@@ -224,85 +261,170 @@
     </header>
 
     <!-- Main Content Canvas -->
-    <main class="pt-24 px-4 sm:px-6 md:px-8 lg:ml-64 lg:px-12 pb-12 min-h-screen">
+    <main
+      class="pt-24 px-4 sm:px-6 md:px-8 lg:ml-64 lg:px-12 pb-12 min-h-screen"
+    >
       <div class="max-w-7xl mx-auto space-y-8 pb-12">
-
         <!-- Welcome Header -->
-        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4">
+        <div
+          class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4"
+        >
           <div>
-            <h1 class="font-headline text-3xl font-bold tracking-tight text-on-surface">
-              System Overview
-            </h1>
-            <p class="text-on-surface-variant mt-1">
-              Status: All systems operational within the Nebula.
+            <h2
+              class="font-headline text-4xl font-bold tracking-tight text-on-surface mb-2"
+            >
+              Dashboard
+            </h2>
+            <p class="text-on-surface-variant font-light text-lg">
+              Ringkasan aktivitas tim dan progres proyek secara real-time.
             </p>
           </div>
           <div class="text-right">
-            <p class="text-sm font-label text-on-surface-variant">Current Rotation</p>
-            <p class="text-xl font-headline font-medium text-primary">May 24, 2024</p>
+            <p class="text-sm font-label text-on-surface-variant">Hari ini,</p>
+            <p
+              id="todayDate"
+              class="text-xl font-headline font-medium text-primary"
+            >
+              Loading..
+            </p>
           </div>
         </div>
 
         <!-- Overview Bento Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- Card 1 -->
-          <div class="bg-surface-container-low p-6 rounded-2xl nebula-glow relative overflow-hidden group">
-            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-              <span class="material-symbols-outlined text-6xl">inventory_2</span>
+          <div
+            class="bg-surface-container-low p-6 rounded-2xl nebula-glow relative overflow-hidden group"
+          >
+            <div
+              class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+            >
+              <span class="material-symbols-outlined text-6xl"
+                >inventory_2</span
+              >
             </div>
-            <p class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-2">Total Tasks</p>
-            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-headline font-bold text-on-surface" id="totalTasks">0</h3>
-            <div class="mt-4 flex items-center gap-2 text-[10px] text-secondary">
+            <p
+              class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-2"
+            >
+              Total Tasks
+            </p>
+            <h3
+              class="text-2xl sm:text-3xl lg:text-4xl font-headline font-bold text-on-surface"
+              id="totalTasks"
+            >
+              0
+            </h3>
+            <div
+              class="mt-4 flex items-center gap-2 text-[10px] text-secondary"
+            >
               <span class="material-symbols-outlined text-sm">trending_up</span>
               <span>+2 from yesterday</span>
             </div>
           </div>
           <!-- Card 2 -->
-          <div class="bg-surface-container-low p-6 rounded-2xl nebula-glow relative overflow-hidden group">
-            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-              <span class="material-symbols-outlined text-6xl text-primary">check_circle</span>
+          <div
+            class="bg-surface-container-low p-6 rounded-2xl nebula-glow relative overflow-hidden group"
+          >
+            <div
+              class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+            >
+              <span class="material-symbols-outlined text-6xl text-primary"
+                >check_circle</span
+              >
             </div>
-            <p class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-2">Completed</p>
-            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-headline font-bold text-on-surface" id="completedTasks">0</h3>
-            <div class="mt-4 flex items-center gap-2 text-[10px] text-on-surface-variant">
-              <div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+            <p
+              class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-2"
+            >
+              Completed
+            </p>
+            <h3
+              class="text-2xl sm:text-3xl lg:text-4xl font-headline font-bold text-on-surface"
+              id="completedTasks"
+            >
+              0
+            </h3>
+            <div
+              class="mt-4 flex items-center gap-2 text-[10px] text-on-surface-variant"
+            >
+              <div
+                class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden"
+              >
                 <div class="bg-primary h-full w-[66%]"></div>
               </div>
               <span>66%</span>
             </div>
           </div>
           <!-- Card 3 -->
-          <div class="bg-surface-container-low p-6 rounded-2xl nebula-glow relative overflow-hidden group">
-            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-              <span class="material-symbols-outlined text-6xl text-error">pending</span>
+          <div
+            class="bg-surface-container-low p-6 rounded-2xl nebula-glow relative overflow-hidden group"
+          >
+            <div
+              class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+            >
+              <span class="material-symbols-outlined text-6xl text-error"
+                >pending</span
+              >
             </div>
-            <p class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-2">Pending</p>
-            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-headline font-bold text-on-surface" id="pendingTasks">0</h3>
+            <p
+              class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-2"
+            >
+              Pending
+            </p>
+            <h3
+              class="text-2xl sm:text-3xl lg:text-4xl font-headline font-bold text-on-surface"
+              id="pendingTasks"
+            >
+              0
+            </h3>
             <div class="mt-4 flex items-center gap-2 text-[10px] text-error">
-              <span class="material-symbols-outlined text-sm">priority_high</span>
+              <span class="material-symbols-outlined text-sm"
+                >priority_high</span
+              >
               <span>2 urgent markers</span>
             </div>
           </div>
           <!-- Card 4 -->
-          <div class="bg-surface-container-low p-6 rounded-2xl nebula-glow relative overflow-hidden group">
-            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-              <span class="material-symbols-outlined text-6xl text-secondary">groups</span>
+          <div
+            class="bg-surface-container-low p-6 rounded-2xl nebula-glow relative overflow-hidden group"
+          >
+            <div
+              class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+            >
+              <span class="material-symbols-outlined text-6xl text-secondary"
+                >groups</span
+              >
             </div>
-            <p class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-2">Team Activity</p>
-            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-headline font-bold text-secondary">92%</h3>
-            <div class="mt-4 flex items-center gap-2 text-[10px] text-secondary">
+            <p
+              class="text-on-surface-variant text-xs font-label uppercase tracking-widest mb-2"
+            >
+              Team Activity
+            </p>
+            <h3
+              class="text-2xl sm:text-3xl lg:text-4xl font-headline font-bold text-secondary"
+            >
+              92%
+            </h3>
+            <div
+              class="mt-4 flex items-center gap-2 text-[10px] text-secondary"
+            >
               <span class="material-symbols-outlined text-sm">bolt</span>
               <span>Peak performance</span>
             </div>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        >
           <!-- Task Progress Section (Large) -->
           <div class="lg:col-span-2 space-y-6">
             <div class="flex items-center justify-between">
-              <h2 class="font-headline text-xl font-semibold text-on-surface">Project Trajectories</h2>
-              <button class="text-xs font-label text-primary hover:underline">View All Projects</button>
+              <h2 class="font-headline text-xl font-semibold text-on-surface">
+                Project Trajectories
+              </h2>
+              <button class="text-xs font-label text-primary hover:underline">
+                View All Projects
+              </button>
             </div>
             <div class="space-y-4">
               <div
@@ -310,21 +432,38 @@
                 class="glass-card p-6 rounded-2xl border border-outline-variant/10 hover:bg-[#31353f]/50 transition-all cursor-pointer"
               ></div>
               <!-- Progress Item 1 -->
-              <div class="glass-card p-6 rounded-2xl border border-outline-variant/10 hover:bg-[#31353f]/50 transition-all cursor-pointer">
+              <div
+                class="glass-card p-6 rounded-2xl border border-outline-variant/10 hover:bg-[#31353f]/50 transition-all cursor-pointer"
+              >
                 <div class="flex justify-between items-center mb-4">
                   <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                      <span class="material-symbols-outlined">rocket_launch</span>
+                    <div
+                      class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0"
+                    >
+                      <span class="material-symbols-outlined"
+                        >rocket_launch</span
+                      >
                     </div>
                     <div>
-                      <h4 class="font-medium text-on-surface">Project Nebula-X</h4>
-                      <p class="text-xs text-on-surface-variant">System integration phase</p>
+                      <h4 class="font-medium text-on-surface">
+                        Project Nebula-X
+                      </h4>
+                      <p class="text-xs text-on-surface-variant">
+                        System integration phase
+                      </p>
                     </div>
                   </div>
-                  <span class="text-sm font-headline text-primary font-bold flex-shrink-0 ml-2">75%</span>
+                  <span
+                    class="text-sm font-headline text-primary font-bold flex-shrink-0 ml-2"
+                    >75%</span
+                  >
                 </div>
-                <div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden">
-                  <div class="h-full bg-gradient-to-r from-primary to-primary-container w-3/4 shadow-[0_0_10px_rgba(206,189,255,0.4)]"></div>
+                <div
+                  class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-gradient-to-r from-primary to-primary-container w-3/4 shadow-[0_0_10px_rgba(206,189,255,0.4)]"
+                  ></div>
                 </div>
                 <div class="mt-4 flex items-center gap-4">
                   <div class="flex -space-x-2">
@@ -336,10 +475,18 @@
                       class="w-6 h-6 rounded-full border border-background"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtwos4YvG_xND8dQXWkxGCQm9FWExZhb28ucLU20Lwxm3TtXeo0i164W36Fd6IPK8u_3eNwVWX8RtFWZFEqMulqUXh0SOQ-q4cHnVSb04QFoVwlzP558AJmLfH-0wwnUZT98QyJ2n6HAUuMtYvncOrxGaafmGDMv8gbAhQ-PB48nhXoGWJ9K0DlEUMJdPPL6I3zo50WKHTZVbzaIPdtg9Ie3Rh__LgYweVfHr2rFYKbnojCLGKQk0P3gwleNg6Mrvwtvs5qYiV1fA"
                     />
-                    <div class="w-6 h-6 rounded-full bg-surface-container-high border border-background flex items-center justify-center text-[8px] text-on-surface-variant">+2</div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-surface-container-high border border-background flex items-center justify-center text-[8px] text-on-surface-variant"
+                    >
+                      +2
+                    </div>
                   </div>
-                  <span class="text-[10px] text-on-surface-variant ml-auto flex items-center gap-1">
-                    <span class="material-symbols-outlined text-xs">calendar_today</span>
+                  <span
+                    class="text-[10px] text-on-surface-variant ml-auto flex items-center gap-1"
+                  >
+                    <span class="material-symbols-outlined text-xs"
+                      >calendar_today</span
+                    >
                     Due in 3 days
                   </span>
                 </div>
@@ -350,62 +497,78 @@
           <!-- Right Sidebar Sections -->
           <div class="space-y-8">
             <section>
-              <h2 class="font-headline text-xl font-semibold text-on-surface mb-6">Activity Log</h2>
+              <h2
+                class="font-headline text-xl font-semibold text-on-surface mb-6"
+              >
+                Activity Log
+              </h2>
               <div id="activityLogList" class="space-y-4">
                 <div class="flex gap-4 relative">
-                  <div class="absolute left-4 top-10 bottom-0 w-px bg-outline-variant/20"></div>
-                  <div class="flex-shrink-0 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center z-10">
-                    <span class="material-symbols-outlined text-sm text-primary">edit</span>
+                  <div
+                    class="absolute left-4 top-10 bottom-0 w-px bg-outline-variant/20"
+                  ></div>
+                  <div
+                    class="flex-shrink-0 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center z-10"
+                  >
+                    <span class="material-symbols-outlined text-sm text-primary"
+                      >edit</span
+                    >
                   </div>
                   <div>
                     <p class="text-sm text-on-surface">
-                      <span class="font-semibold">Alex</span> updated <span class="text-primary">Project X</span>
+                      <span class="font-semibold">Alex</span> updated
+                      <span class="text-primary">Project X</span>
                     </p>
-                    <p class="text-[10px] text-on-surface-variant">12 minutes ago</p>
+                    <p class="text-[10px] text-on-surface-variant">
+                      12 minutes ago
+                    </p>
                   </div>
                 </div>
               </div>
             </section>
           </div>
         </div>
-
       </div>
     </main>
 
     <!-- Floating Action Button -->
     <div class="fixed bottom-8 right-8 z-50 group">
-      <div class="absolute inset-0 bg-primary/20 blur-xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <button class="relative bg-gradient-to-br from-primary to-primary-container p-4 rounded-full shadow-2xl flex items-center justify-center text-on-primary">
+      <div
+        class="absolute inset-0 bg-primary/20 blur-xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity"
+      ></div>
+      <button
+        class="relative bg-gradient-to-br from-primary to-primary-container p-4 rounded-full shadow-2xl flex items-center justify-center text-on-primary"
+      >
         <span class="material-symbols-outlined text-3xl">add</span>
       </button>
     </div>
 
     <!-- Sidebar Toggle Script -->
     <script>
-      const menuBtn = document.getElementById('menuBtn');
-      const sidebar = document.getElementById('desktopSidebar');
-      const overlay = document.getElementById('sidebarOverlay');
+      const menuBtn = document.getElementById("menuBtn");
+      const sidebar = document.getElementById("desktopSidebar");
+      const overlay = document.getElementById("sidebarOverlay");
 
       function openSidebar() {
-        sidebar.classList.add('open');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        sidebar.classList.add("open");
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden";
       }
 
       function closeSidebar() {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
+        sidebar.classList.remove("open");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "";
       }
 
-      menuBtn.addEventListener('click', () => {
-        sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
       });
 
-      overlay.addEventListener('click', closeSidebar);
+      overlay.addEventListener("click", closeSidebar);
 
-      sidebar.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
+      sidebar.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
           if (window.innerWidth < 1024) closeSidebar();
         });
       });
@@ -453,15 +616,17 @@
         document.getElementById("userName").textContent = userData.nama;
         document.getElementById("userRole").textContent = userData.role;
 
-        document.getElementById("logoutBtn").addEventListener("click", async () => {
-          try {
-            await signOut(auth);
-            window.location.href = "/pages/auth/login.html";
-          } catch (err) {
-            console.error(err);
-            alert("Logout gagal");
-          }
-        });
+        document
+          .getElementById("logoutBtn")
+          .addEventListener("click", async () => {
+            try {
+              await signOut(auth);
+              window.location.href = "/pages/auth/login.html";
+            } catch (err) {
+              console.error(err);
+              alert("Logout gagal");
+            }
+          });
       });
 
       console.log("🔥 App:", app);

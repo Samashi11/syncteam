@@ -1,17 +1,39 @@
 import { getProjects } from "../js/projectService.js";
 import { getActivityLogs } from "../js/activityService.js";
+import { listenAuth } from "../js/auth.js";
+import { getUserData } from "../js/userService.js";
 
+document.addEventListener("DOMContentLoaded", () => {
+  listenAuth(async (user) => {
+    if (!user) {
+      window.location.href = "/pages/auth/login.html";
+      return;
+    }
 
+    // 🔥 Ambil data user
+    const userData = await getUserData(user.uid);
 
-document.addEventListener("DOMContentLoaded", async () => {
-  await loadActivityLogs();
+    // 🔥 Hide button jika bukan Leader
+    const btn = document.getElementById("newProjectBtn");
+    if (userData.role !== "Leader") {
+      btn?.classList.add("hidden");
+    }
 
-  const container = document.getElementById("projectPreview");
+    // 🔥 Set tanggal hari ini
+    const todayEl = document.getElementById("todayDate");
+    if (todayEl) {
+      todayEl.textContent = getTodayFormatted();
+    }
 
-  if (!container) return;
+    // 🔥 Load data
+    await loadActivityLogs();
 
-  const projects = await getProjects();
-  renderProjectPreview(projects);
+    const container = document.getElementById("projectPreview");
+    if (!container) return;
+
+    const projects = await getProjects();
+    renderProjectPreview(projects);
+  });
 });
 
 async function loadActivityLogs() {
@@ -74,5 +96,16 @@ function renderProjectPreview(projects) {
         <p class="text-xs text-on-surface-variant">${p.course}</p>
       </div>
     `;
+  });
+}
+
+function getTodayFormatted() {
+  const today = new Date();
+
+  return today.toLocaleDateString("id-ID", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   });
 }
