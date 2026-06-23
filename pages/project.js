@@ -28,6 +28,9 @@ listenAuth(async (user) => {
   document.getElementById("newProjectBtn")?.addEventListener("click", () => {
     window.location.href = "/pages/createProject.html";
   });
+  document.getElementById("newProjectBtns")?.addEventListener("click", () => {
+    window.location.href = "/pages/createProject.html";
+  });
 
   const projects = await getProjects();
   renderProjects(projects);
@@ -39,7 +42,7 @@ function renderProjects(projects) {
   projects.forEach((project) => {
     container.innerHTML += `
     <div
-            class="glass-panel nebula-glow rounded-2xl p-6 card-hover transition-all duration-300 border border-outline-variant/10 flex flex-col h-[340px] group"
+            class="glass-panel nebula-glow rounded-2xl mb-2 p-6 card-hover transition-all duration-300 border border-outline-variant/10 flex flex-col h-[340px] group"
           >
             <div class="flex justify-between items-start mb-6">
               <div class="flex flex-col gap-1">

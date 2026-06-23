@@ -315,7 +315,7 @@ function renderTopUsers(users) {
   users.forEach((user, index) => {
     const badge =
       index === 0
-        ? `<span class="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary">Top Contributor</span>`
+        ? `<span class="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary"></span>`
         : "";
 
     container.innerHTML += `
