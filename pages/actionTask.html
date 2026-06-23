@@ -1,10 +1,10 @@
 <!doctype html>
 
-<html class="dark" lang="en">
+<html class="dark" lang="id">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Assign Task | TeamSync</title>
+    <title>Berikan Tugas | TeamSync</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
@@ -133,16 +133,14 @@
   <body
     class="bg-surface-container-lowest font-body text-on-surface min-h-screen"
   >
-    <!-- TopAppBar -->
     <header
       class="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex justify-between items-center px-4 md:px-6 h-16"
     >
       <div class="flex items-center gap-3 md:gap-8">
-        <!-- Hamburger button (mobile only) -->
         <button
           id="menuToggle"
           class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors text-slate-400"
-          aria-label="Toggle sidebar"
+          aria-label="Buka navigasi"
         >
           <span class="material-symbols-outlined">menu</span>
         </button>
@@ -160,14 +158,13 @@
           >
           <input
             class="bg-transparent border-none focus:ring-0 text-sm text-on-surface placeholder:text-slate-500 w-64 ml-2"
-            placeholder="Search parameters..."
+            placeholder="Cari parameter..."
             type="text"
           />
         </div>
       </div>
 
       <div class="flex items-center gap-2 md:gap-4">
-        <!-- Mobile search icon -->
         <button
           class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors text-slate-400"
         >
@@ -185,7 +182,7 @@
         >
           <div class="text-right hidden sm:block">
             <p class="text-xs font-semibold text-violet-200">Alex Chen</p>
-            <p class="text-[10px] text-slate-500">Lead Architect</p>
+            <p class="text-[10px] text-slate-500">Arsitek Utama</p>
           </div>
           <span class="material-symbols-outlined text-violet-400 text-3xl"
             >account_circle</span
@@ -194,13 +191,11 @@
       </div>
     </header>
 
-    <!-- Sidebar Overlay (mobile) -->
     <div
       id="sidebarOverlay"
       class="fixed inset-0 bg-black/50 z-30 md:hidden"
     ></div>
 
-    <!-- SideNavBar -->
     <nav
       id="sidebar"
       class="fixed left-0 top-0 h-screen w-64 z-40 bg-slate-900/60 backdrop-blur-2xl shadow-[10px_0_30px_rgba(0,0,0,0.3)] flex flex-col py-20 px-4 space-y-2"
@@ -209,10 +204,10 @@
         <p
           class="text-violet-400 font-headline font-bold text-lg tracking-wider"
         >
-          Project Nova
+          Proyek Nova
         </p>
         <p class="text-slate-500 text-[10px] uppercase tracking-widest">
-          Engineering A1
+          Teknik A1
         </p>
       </div>
       <a
@@ -223,7 +218,7 @@
           class="material-symbols-outlined group-active:scale-95 duration-200"
           >space_dashboard</span
         >
-        <span class="text-sm font-['Space_Grotesk']">Dashboard</span>
+        <span class="text-sm font-['Space_Grotesk']">Dasbor</span>
       </a>
       <a
         class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group"
@@ -233,7 +228,7 @@
           class="material-symbols-outlined group-active:scale-95 duration-200"
           >folder</span
         >
-        <span class="text-sm font-['Space_Grotesk']">Projects</span>
+        <span class="text-sm font-['Space_Grotesk']">Proyek</span>
       </a>
       <a
         class="flex items-center gap-3 px-4 py-3 rounded-lg text-violet-300 border-r-2 border-violet-500 bg-violet-500/10 group"
@@ -243,7 +238,7 @@
           class="material-symbols-outlined group-active:scale-95 duration-200"
           >rocket_launch</span
         >
-        <span class="text-sm font-['Space_Grotesk']">Tasks</span>
+        <span class="text-sm font-['Space_Grotesk']">Tugas</span>
       </a>
       <a
         class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group"
@@ -253,7 +248,7 @@
           class="material-symbols-outlined group-active:scale-95 duration-200"
           >history_edu</span
         >
-        <span class="text-sm font-['Space_Grotesk']">Activity Log</span>
+        <span class="text-sm font-['Space_Grotesk']">Log Aktivitas</span>
       </a>
       <a
         class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-300 group"
@@ -263,23 +258,21 @@
           class="material-symbols-outlined group-active:scale-95 duration-200"
           >query_stats</span
         >
-        <span class="text-sm font-['Space_Grotesk']">Contribution</span>
+        <span class="text-sm font-['Space_Grotesk']">Kontribusi</span>
       </a>
       <div class="pt-10">
         <button
           class="w-full py-3 bg-gradient-to-r from-primary-container to-primary text-on-primary font-bold rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-primary-container/20"
         >
           <span class="material-symbols-outlined text-lg">add</span>
-          <span class="font-headline tracking-tight">New Task</span>
+          <span class="font-headline tracking-tight">Tugas Baru</span>
         </button>
       </div>
     </nav>
 
-    <!-- Main Content -->
     <main
       class="md:pl-64 pt-16 min-h-screen relative flex items-center justify-center overflow-hidden"
     >
-      <!-- Ambient Decor -->
       <div
         class="absolute top-1/4 right-1/4 w-96 h-96 bg-violet-600/10 blur-[120px] rounded-full -z-10"
       ></div>
@@ -295,60 +288,53 @@
             <h1
               class="text-3xl md:text-4xl font-headline font-bold text-on-surface tracking-tight mb-2"
             >
-              Create New Task
+              Buat Tugas Baru
             </h1>
             <p class="text-on-surface-variant/80 text-sm">
-              Define objectives and assign them to your stellar team.
+              Tentukan tujuan dan delegasikan kepada tim unggulan Anda.
             </p>
           </header>
 
           <form class="space-y-8" id="taskForm">
-            <!-- Task Title -->
             <div class="relative">
               <label
                 class="block text-[10px] uppercase tracking-widest text-primary font-bold mb-2"
-                >Primary Objective</label
+                >Tujuan Utama</label
               >
               <input
                 class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline-variant/30 py-4 text-xl md:text-2xl font-headline text-on-surface placeholder:text-on-surface-variant/30 transition-all focus:border-primary"
-                placeholder="Mission title..."
+                placeholder="Judul misi..."
                 type="text"
                 id="taskTitle"
               />
             </div>
 
-            <!-- Description -->
             <div>
               <label
                 class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-3"
-                >Briefing Details</label
+                >Detail Instruksi</label
               >
               <textarea
                 class="w-full bg-surface-container-lowest/50 rounded-xl p-4 border border-outline-variant/10 text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-primary/30 transition-all"
-                placeholder="Outline the scope of work, technical requirements, and expected outcomes..."
+                placeholder="Uraikan ruang lingkup pekerjaan, kebutuhan teknis, dan hasil yang diharapkan..."
                 rows="4"
               ></textarea>
             </div>
 
-            <!-- Assign & Meta Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <!-- Assign To -->
               <div class="space-y-4">
                 <label
                   class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                  >Delegate To</label
+                  >Delegasikan Kepada</label
                 >
-                <div id="userList" class="grid grid-cols-2 gap-2">
-                  <!-- User buttons will be injected here by JavaScript -->
-                </div>
+                <div id="userList" class="grid grid-cols-2 gap-2"></div>
               </div>
 
-              <!-- Date & Status -->
               <div class="space-y-6">
                 <div>
                   <label
                     class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2"
-                    >Orbital Deadline</label
+                    >Tenggat Waktu Orbital</label
                   >
                   <div class="relative">
                     <span
@@ -365,7 +351,7 @@
                 <div>
                   <label
                     class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2"
-                    >Initial Status</label
+                    >Status Awal</label
                   >
                   <div class="relative">
                     <span
@@ -376,9 +362,9 @@
                       class="w-full bg-surface-container-lowest/50 border border-outline-variant/10 rounded-xl pl-11 pr-4 py-2.5 text-sm text-on-surface appearance-none"
                       id="taskStatus"
                     >
-                      <option value="todo">To Do</option>
-                      <option value="inprogress">In Progress</option>
-                      <option value="done">Done</option>
+                      <option value="todo">Akan Dilakukan</option>
+                      <option value="inprogress">Dalam Proses</option>
+                      <option value="done">Selesai</option>
                     </select>
                     <span
                       class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg pointer-events-none"
@@ -389,7 +375,6 @@
               </div>
             </div>
 
-            <!-- Actions -->
             <div
               class="pt-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-4"
             >
@@ -397,13 +382,13 @@
                 class="text-sm font-bold text-on-surface-variant hover:text-on-surface transition-colors"
                 type="button"
               >
-                Discard Draft
+                Buang Draf
               </button>
               <button
                 class="w-full sm:w-auto px-10 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold rounded-xl shadow-[0_0_20px_rgba(206,189,255,0.2)] hover:shadow-[0_0_30px_rgba(206,189,255,0.4)] transition-all flex items-center justify-center gap-2"
                 type="submit"
               >
-                Initialize Mission
+                Inisialisasi Misi
                 <span class="material-symbols-outlined text-lg">send</span>
               </button>
             </div>
@@ -416,27 +401,26 @@
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-sm">verified_user</span>
             <span class="text-[10px] uppercase tracking-tighter"
-              >Secure Protocol Alpha</span
+              >Protokol Keamanan Alpha</span
             >
           </div>
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-sm">cloud_sync</span>
             <span class="text-[10px] uppercase tracking-tighter"
-              >Real-time Node Sync</span
+              >Sinkronisasi Node Real-time</span
             >
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Contextual Focus Pulse (Ambient Decor) -->
     <div
       class="fixed bottom-6 right-6 md:bottom-12 md:right-12 flex flex-col items-end gap-2 group pointer-events-none opacity-50 hover:opacity-100 transition-opacity"
     >
       <p
         class="text-[10px] font-headline font-medium text-primary tracking-widest bg-surface-container-high/80 backdrop-blur-md px-3 py-1 rounded-full border border-primary/20"
       >
-        CURRENT TASK FOCUS
+        FOKUS TUGAS SAAT INI
       </p>
       <div
         class="w-4 h-4 bg-primary rounded-full animate-pulse shadow-[0_0_15px_#cebdff]"
@@ -444,119 +428,8 @@
     </div>
 
     <script type="module" src="../js/app.js"></script>
-    <!-- <script type="module">
-      import { db } from "../js/firebase.js";
-      import { auth } from "../js/firebase.js";
-      import {
-        doc,
-        getDocs,
-        collection,
-        query,
-        where,
-        addDoc,
-        Timestamp,
-      } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
-
-      async function loadUsers() {
-        const container = document.querySelector("#userList");
-
-        const q = query(collection(db, "users"), where("role", "==", "member"));
-
-        const snapshot = await getDocs(q);
-
-        container.innerHTML = "";
-
-        snapshot.forEach((docSnap) => {
-          const data = docSnap.data();
-          const userId = docSnap.id;
-
-          container.innerHTML += `
-      <button 
-        class="assign-btn flex items-center gap-2 p-2 rounded-lg bg-surface-container-high/40 border border-outline-variant/10 hover:bg-surface-container-highest"
-        type="button"
-        data-user="${userId}"
-      >
-        <span class="text-xs font-medium text-on-surface">
-          ${data.nama}
-        </span>
-      </button>
-    `;
-        });
-
-        attachUserClick();
-      }
-
-      let selectedUser = null;
-
-      function attachUserClick() {
-        document.querySelectorAll(".assign-btn").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            selectedUser = btn.dataset.user;
-
-            document.querySelectorAll(".assign-btn").forEach((b) => {
-              b.classList.remove("border-primary", "bg-primary/5");
-            });
-
-            btn.classList.add("border-primary", "bg-primary/5");
-
-            console.log("Selected:", selectedUser);
-          });
-        });
-      }
-
-      loadUsers();
-
-      const projectId = localStorage.getItem("currentProjectId");
-
-      if (!projectId) {
-        alert("Pilih project dulu!");
-        window.location.href = "projects.html";
-      }
-
-      document
-        .getElementById("taskForm")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-
-          const title = document.getElementById("taskTitle").value;
-          const deadline = document.getElementById("taskDeadline").value;
-          const status = document.getElementById("taskStatus").value;
-          const projectId = localStorage.getItem("currentProjectId");
-
-          if (!selectedUser) {
-            alert("Pilih anggota dulu bro");
-            return;
-          }
-
-          try {
-            const taskRef = await addDoc(collection(db, "tasks"), {
-              title,
-              status,
-              projectId: projectId,
-              assignedTo: doc(db, "users", selectedUser),
-              deadline: Timestamp.fromDate(new Date(deadline)),
-              createdAt: Timestamp.now(),
-              createdBy: doc(db, "users", auth.currentUser.uid)
-            });
-
-            await addDoc(collection(db, "activity_logs"), {
-              action: "create_task",
-              taskId: taskRef,
-              taskTitle: title,
-              userId: doc(db, "users", selectedUser),
-              timestamp: Timestamp.now(),
-            });
-
-            alert("Task berhasil dibuat");
-          } catch (err) {
-            console.error(err);
-            alert("Error bro");
-          }
-        });
-    </script> -->
     <script type="module" src="../pages/actionTask.js"></script>
 
-    <!-- Responsive Sidebar Toggle Script -->
     <script>
       const menuToggle = document.getElementById("menuToggle");
       const sidebar = document.getElementById("sidebar");

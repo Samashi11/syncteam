@@ -42,7 +42,7 @@ export async function register(nama, email, password) {
   await setDoc(doc(db, "users", user.uid), {
     nama: nama,
     email: email,
-    role: "Member",
+    role: "member",
     createdAt: serverTimestamp(),
   });
 
